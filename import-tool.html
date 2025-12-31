@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress XML 数据导入工具</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #f5f5f7;
+            padding: 40px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1d1d1f; margin-bottom: 10px; }
+        .desc { color: #86868b; margin-bottom: 30px; line-height: 1.6; }
+        .upload-area {
+            background: #fff;
+            border: 2px dashed #d2d2d7;
+            border-radius: 16px;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .upload-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #007aff;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            border: none;
+        }
+        .upload-btn:hover { background: #0056b3; }
+        #file-input { display: none; }
+        .status {
+            background: #fff;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+        .cat-tag {
+            padding: 6px 14px;
+            background: #fff;
+            border-radius: 20px;
+            font-size: 13px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+        .buttons { display: flex; gap: 10px; margin-bottom: 20px; }
+        .btn {
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            border: none;
+        }
+        .btn-primary { background: #007aff; color: white; }
+        .btn-secondary { background: #fff; color: #007aff; border: 1px solid #d2d2d7; }
+        textarea {
+            width: 100%;
+            height: 400px;
+            padding: 16px;
+            background: #fff;
+            border: 1px solid #d2d2d7;
+            border-radius: 12px;
+            font-family: monospace;
+            font-size: 12px;
+            resize: vertical;
+        }
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .instructions h3 { color: #856404; margin-bottom: 10px; }
+        .instructions ol { padding-left: 20px; color: #856404; }
+        .instructions li { margin-bottom: 8px; }
+        .instructions code { background: #ffeeba; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📦 WordPress XML 数据导入工具</h1>
+        <p class="desc">上传您的 WordPress 导出 XML 文件，自动提取所有导航链接数据。</p>
+        
+        <div class="upload-area">
+            <input type="file" id="file-input" accept=".xml">
+            <label for="file-input" class="upload-btn">选择 WordPress XML 文件</label>
+        </div>
+        
+        <div id="status" class="status" style="display:none;"></div>
+        
+        <div id="categories" class="categories"></div>
+        
+        <div id="output-area" style="display:none;">
+            <div class="buttons">
+                <button class="btn btn-secondary" onclick="copyJSON()">📋 复制 JSON</button>
+                <button class="btn btn-primary" onclick="downloadJSON()">💾 下载 navigation.json</button>
+            </div>
+            <textarea id="json-output" readonly></textarea>
+        </div>
+        
+        <div class="instructions">
+            <h3>📝 使用步骤</h3>
+            <ol>
+                <li>点击上方按钮选择您的 <code>WordPress.2025-12-29.xml</code> 文件</li>
+                <li>等待解析完成（会显示提取到的分类和网站数量）</li>
+                <li>点击 <strong>"下载 navigation.json"</strong> 按钮</li>
+                <li>将下载的文件复制到 <code>E:\huodai-nav\src\data\</code> 目录，替换现有文件</li>
+                <li>刷新 http://localhost:3018/ 查看完整内容</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        let jsonData = null;
+        
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            showStatus('正在读取文件...');
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                parseXML(e.target.result);
+            };
+            reader.onerror = function() {
+                showStatus('❌ 文件读取失败');
+            };
+            reader.readAsText(file);
+        });
+        
+        function showStatus(msg) {
+            const el = document.getElementById('status');
+            el.style.display = 'block';
+            el.textContent = msg;
+        }
+        
+        function parseXML(xmlContent) {
+            showStatus('正在解析 XML 文件...');
+            
+            try {
+                // Extract categories
+                const categories = [];
+                const catRegex = /<wp:term>[\s\S]*?<wp:term_taxonomy><!\[CDATA\[favorites\]\]><\/wp:term_taxonomy>[\s\S]*?<\/wp:term>/g;
+                let match;
+                
+                while ((match = catRegex.exec(xmlContent)) !== null) {
+                    const termXml = match[0];
+                    const idMatch = termXml.match(/<wp:term_id>(\d+)<\/wp:term_id>/);
+                    const nameMatch = termXml.match(/<wp:term_name><!\[CDATA\[(.*?)\]\]><\/wp:term_name>/);
+                    const iconMatch = termXml.match(/<wp:meta_key><!\[CDATA\[_term_ico\]\]><\/wp:meta_key>\s*<wp:meta_value><!\[CDATA\[(.*?)\]\]><\/wp:meta_value>/);
+                    const orderMatch = termXml.match(/<wp:meta_key><!\[CDATA\[_term_order\]\]><\/wp:meta_key>\s*<wp:meta_value><!\[CDATA\[(.*?)\]\]><\/wp:meta_value>/);
+                    
+                    if (nameMatch) {
+                        categories.push({
+                            id: idMatch ? parseInt(idMatch[1]) : categories.length + 1,
+                            name: nameMatch[1],
+                            slug: nameMatch[1].toLowerCase().replace(/\s+/g, '-'),
+                            icon: iconMatch ? iconMatch[1] : 'fa fa-link',
+                            order: orderMatch ? parseFloat(orderMatch[1]) : 0
+                        });
+                    }
+                }
+                
+                categories.sort((a, b) => b.order - a.order);
+                
+                // Extract sites
+                const sites = [];
+                let siteId = 1;
+                const items = xmlContent.split(/<item>/);
+                
+                for (let i = 1; i < items.length; i++) {
+                    const itemXml = items[i].split(/<\/item>/)[0];
+                    
+                    if (!itemXml.includes('<wp:post_type><![CDATA[sites]]></wp:post_type>')) continue;
+                    if (!itemXml.includes('<wp:status><![CDATA[publish]]></wp:status>')) continue;
+                    
+                    const titleMatch = itemXml.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/);
+                    const categoryMatch = itemXml.match(/<category domain="favorites"[^>]*><!\[CDATA\[(.*?)\]\]><\/category>/);
+                    const linkMatch = itemXml.match(/<wp:meta_key><!\[CDATA\[_sites_link\]\]><\/wp:meta_key>\s*<wp:meta_value><!\[CDATA\[(.*?)\]\]><\/wp:meta_value>/);
+                    const descMatch = itemXml.match(/<wp:meta_key><!\[CDATA\[_sites_sescribe\]\]><\/wp:meta_key>\s*<wp:meta_value><!\[CDATA\[(.*?)\]\]><\/wp:meta_value>/);
+                    const orderMatch = itemXml.match(/<wp:meta_key><!\[CDATA\[_sites_order\]\]><\/wp:meta_key>\s*<wp:meta_value><!\[CDATA\[(.*?)\]\]><\/wp:meta_value>/);
+                    
+                    if (titleMatch && linkMatch && linkMatch[1]) {
+                        sites.push({
+                            id: siteId++,
+                            title: titleMatch[1],
+                            url: linkMatch[1],
+                            description: descMatch ? descMatch[1] : '',
+                            category: categoryMatch ? categoryMatch[1] : '未分类',
+                            order: orderMatch ? parseFloat(orderMatch[1]) : 0
+                        });
+                    }
+                }
+                
+                sites.sort((a, b) => b.order - a.order);
+                
+                // Show categories
+                const catContainer = document.getElementById('categories');
+                catContainer.innerHTML = '<h3 style="width:100%;margin-bottom:10px;">提取的分类：</h3>' + 
+                    categories.map(c => `<span class="cat-tag">${c.name} (${sites.filter(s => s.category === c.name).length})</span>`).join('');
+                
+                // Generate JSON
+                jsonData = { categories, sites };
+                const jsonStr = JSON.stringify(jsonData, null, 2);
+                
+                document.getElementById('json-output').value = jsonStr;
+                document.getElementById('output-area').style.display = 'block';
+                
+                showStatus(`✅ 解析完成！提取到 ${categories.length} 个分类，${sites.length} 个导航链接`);
+                
+            } catch (error) {
+                showStatus('❌ 解析失败: ' + error.message);
+            }
+        }
+        
+        function copyJSON() {
+            const textarea = document.getElementById('json-output');
+            textarea.select();
+            document.execCommand('copy');
+            alert('已复制到剪贴板！');
+        }
+        
+        function downloadJSON() {
+            const jsonStr = document.getElementById('json-output').value;
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'navigation.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
+
