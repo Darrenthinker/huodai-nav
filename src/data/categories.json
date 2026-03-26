@@ -1,0 +1,16 @@
+[
+  { "id": 33, "name": "自研工具", "slug": "自研工具", "icon": "fa fa-location-arrow", "order": 105 },
+  { "id": 6, "name": "国际空运", "slug": "国际空运", "icon": "fa fa-plane", "order": 100 },
+  { "id": 7, "name": "国际快递", "slug": "国际快递", "icon": "fa fa-globe", "order": 99 },
+  { "id": 8, "name": "国际海运", "slug": "国际海运", "icon": "fa fa-ship", "order": 98.5 },
+  { "id": 9, "name": "FBA头程", "slug": "FBA头程", "icon": "fa fa-amazon", "order": 97 },
+  { "id": 24, "name": "国际专线", "slug": "国际专线", "icon": "fa fa-arrows-h", "order": 96.6 },
+  { "id": 34, "name": "国际小包", "slug": "国际小包", "icon": "fa fa-cubes", "order": 96.5 },
+  { "id": 27, "name": "海关常用", "slug": "海关常用", "icon": "fa fa-building", "order": 95 },
+  { "id": 29, "name": "效率工具", "slug": "效率工具", "icon": "fa fa-superscript", "order": 94 },
+  { "id": 30, "name": "外贸导航", "slug": "外贸导航", "icon": "fa fa-television", "order": 93 },
+  { "id": 31, "name": "打击老赖", "slug": "打击老赖", "icon": "fa fa-share", "order": 92 },
+  { "id": 32, "name": "新闻资讯", "slug": "新闻资讯", "icon": "fa fa-list-alt", "order": 91 },
+  { "id": 28, "name": "业务推荐", "slug": "业务推荐", "icon": "fa fa-ellipsis-v", "order": 90 }
+]
+

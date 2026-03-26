@@ -1,262 +1,136 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
-import navigationData from "@/data/navigation.json";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { getCategories, getSites } from "@/lib/data";
+import type { Site } from "@/lib/types";
+import { Sidebar } from "@/components/sidebar";
+import { SearchHeader } from "@/components/search-header";
+import { CategorySection } from "@/components/category-section";
+import { BackToTop } from "@/components/back-to-top";
+import { ContactFloat } from "@/components/contact-float";
+import { SubmitForm } from "@/components/submit-form";
+import { Search } from "lucide-react";
 
-interface Category {
-  id: number;
-  name: string;
-  slug: string;
-  icon: string;
-  order: number;
-}
-
-interface Site {
-  id: number;
-  title: string;
-  url: string;
-  description: string;
-  category: string;
-  order: number;
-}
+const categories = getCategories();
+const allSites = getSites();
 
 export default function Home() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState<string | null>(categories[0]?.name ?? null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
+  const [submitOpen, setSubmitOpen] = useState(false);
+  const [frequentRefreshKey, setFrequentRefreshKey] = useState(0);
 
-  // Sort categories by order (descending)
-  const categories: Category[] = useMemo(() => {
-    return [...navigationData.categories].sort((a, b) => b.order - a.order);
+  const filteredSites = useMemo(() => {
+    if (!query.trim()) return allSites;
+    const q = query.toLowerCase();
+    return allSites.filter(
+      (s) =>
+        s.title.toLowerCase().includes(q) ||
+        s.description.toLowerCase().includes(q) ||
+        s.category.toLowerCase().includes(q)
+    );
+  }, [query]);
+
+  const sitesByCategory = useMemo(() => {
+    const map: Record<string, Site[]> = {};
+    for (const cat of categories) {
+      map[cat.name] = filteredSites.filter((s) => s.category === cat.name);
+    }
+    return map;
+  }, [filteredSites]);
+
+  const scrollLockRef = useRef(false);
+
+  const scrollTo = useCallback((name: string) => {
+    const cat = categories.find((c) => c.name === name);
+    if (!cat) return;
+    const el = document.getElementById(`cat-${cat.id}`);
+    if (el) {
+      scrollLockRef.current = true;
+      setActiveCategory(name);
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => { scrollLockRef.current = false; }, 800);
+    }
   }, []);
 
-  // Sort and filter sites
-  const filteredSites = useMemo(() => {
-    let sites = [...navigationData.sites] as Site[];
-    
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      sites = sites.filter(
-        (site) =>
-          site.title.toLowerCase().includes(query) ||
-          site.description.toLowerCase().includes(query) ||
-          site.category.toLowerCase().includes(query)
-      );
-    }
-
-    return sites.sort((a, b) => b.order - a.order);
-  }, [searchQuery]);
-
-  // Group sites by category
-  const sitesByCategory = useMemo(() => {
-    const grouped: Record<string, Site[]> = {};
-    
-    categories.forEach((cat) => {
-      grouped[cat.name] = filteredSites.filter(
-        (site) => site.category === cat.name
-      );
-    });
-
-    return grouped;
-  }, [categories, filteredSites]);
-
-  // Scroll to category
-  const scrollToCategory = (categoryName: string) => {
-    setActiveCategory(categoryName);
-    const element = document.getElementById(`category-${categoryName}`);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  // Get first letter for fallback icon
-  const getIconLetter = (title: string) => {
-    return title.charAt(0).toUpperCase();
-  };
-
-  // Get high-quality logo URL from website (Clearbit first, then favicon fallback)
-  const getLogoUrl = (url: string) => {
-    try {
-      const domain = new URL(url).hostname;
-      // Clearbit provides high-quality company logos
-      return `https://logo.clearbit.com/${domain}`;
-    } catch {
-      return null;
-    }
-  };
-
-  // Fallback favicon URL
-  const getFaviconUrl = (url: string) => {
-    try {
-      const domain = new URL(url).hostname;
-      return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-    } catch {
-      return null;
-    }
-  };
-
-  // Handle link click
-  const handleSiteClick = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  // Track scroll position for active category
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = categories.map((cat) => ({
-        name: cat.name,
-        element: document.getElementById(`category-${cat.name}`),
-      }));
-
-      for (const section of sections) {
-        if (section.element) {
-          const rect = section.element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            setActiveCategory(section.name);
-            break;
+    const ids = categories.map((c) => ({ name: c.name, el: document.getElementById(`cat-${c.id}`) }));
+    const onScroll = () => {
+      if (scrollLockRef.current) return;
+      let active: string | null = null;
+      for (const { name, el } of ids) {
+        if (el) {
+          const r = el.getBoundingClientRect();
+          if (r.top <= 150) {
+            active = name;
           }
         }
       }
+      if (active) setActiveCategory(active);
     };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [categories]);
+  const mainMl = collapsed ? "lg:ml-[56px]" : "lg:ml-[156px]";
 
   return (
-    <div className="app-container">
-      {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="sidebar-header">
-          <a href="/" className="sidebar-logo">
-            货代导航网
-          </a>
-        </div>
-        <nav className="sidebar-nav">
-          {categories.map((category) => (
-            <div
-              key={category.id}
-              className={`nav-item ${
-                activeCategory === category.name ? "active" : ""
-              }`}
-              onClick={() => scrollToCategory(category.name)}
-            >
-              <i className={category.icon}></i>
-              <span>{category.name}</span>
-            </div>
-          ))}
-        </nav>
-      </aside>
+    <div className="flex min-h-dvh">
+      <Sidebar
+        categories={categories}
+        activeCategory={activeCategory}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+        onCategoryClick={scrollTo}
+        collapsed={collapsed}
+        onToggleCollapse={() => setCollapsed((v) => !v)}
+        onSubmitClick={() => setSubmitOpen(true)}
+      />
 
-      {/* Main Content */}
-      <main className="main-content">
-        {/* Header */}
-        <header className="header">
-          <div className="header-content">
-            <div className="search-box">
-              <i className="fa fa-search search-icon"></i>
-              <input
-                type="text"
-                className="search-input"
-                placeholder="搜索网站、工具、服务..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-            <div className="header-stats">
-              <span className="stat-item">
-                <i className="fa fa-folder-o"></i>
-                {categories.length} 分类
-              </span>
-              <span className="stat-item">
-                <i className="fa fa-link"></i>
-                {navigationData.sites.length} 网站
-              </span>
-            </div>
-          </div>
-        </header>
+      <main className={`flex-1 ${mainMl} min-w-0 transition-[margin] duration-250 ease-out`}>
+        <SearchHeader
+          query={query}
+          onChange={setQuery}
+          onMenuClick={() => setSidebarOpen(true)}
+          filteredCount={filteredSites.length}
+          frequentRefreshKey={frequentRefreshKey}
+        />
 
-        {/* Content */}
-        <div className="content">
-          {searchQuery && filteredSites.length === 0 ? (
-            <div className="no-results">
-              <i className="fa fa-search"></i>
-              <p>没有找到匹配的结果</p>
-              <p>请尝试其他关键词</p>
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          {query.trim() && filteredSites.length === 0 ? (
+            <div className="text-center py-20 text-[#86868b]">
+              <Search size={48} className="mx-auto mb-4 opacity-30" />
+              <p className="text-lg font-medium">没有找到匹配的结果</p>
+              <p className="text-sm mt-1">请尝试其他关键词</p>
             </div>
           ) : (
-            categories.map((category) => {
-              const sites = sitesByCategory[category.name];
-              if (!sites || sites.length === 0) return null;
-
-              return (
-                <section
-                  key={category.id}
-                  id={`category-${category.name}`}
-                  className="category-section"
-                >
-                  <h2 className="category-title">
-                    <i className={category.icon}></i>
-                    {category.name}
-                  </h2>
-                  <div className="sites-grid">
-                    {sites.map((site) => {
-                      const logoUrl = getLogoUrl(site.url);
-                      const faviconUrl = getFaviconUrl(site.url);
-                      return (
-                        <div
-                          key={site.id}
-                          className="site-card"
-                          data-category={site.category}
-                          onClick={() => handleSiteClick(site.url)}
-                        >
-                          <div className="site-icon">
-                            {/* Try Clearbit logo first */}
-                            <img
-                              src={logoUrl || ''}
-                              alt=""
-                              className="site-logo"
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                // If Clearbit fails, try favicon
-                                if (faviconUrl && target.src !== faviconUrl) {
-                                  target.src = faviconUrl;
-                                } else {
-                                  // If favicon also fails, hide image and show letter
-                                  target.style.display = 'none';
-                                  const letterEl = target.nextSibling as HTMLElement;
-                                  if (letterEl) {
-                                    letterEl.style.display = 'flex';
-                                  }
-                                }
-                              }}
-                            />
-                            <span className="site-icon-letter">
-                              {getIconLetter(site.title)}
-                            </span>
-                          </div>
-                          <div className="site-info">
-                            <div className="site-title">{site.title}</div>
-                            <div className="site-desc">{site.description}</div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </section>
-              );
-            })
+            categories.map((cat) => (
+              <CategorySection
+                key={cat.id}
+                category={cat}
+                sites={sitesByCategory[cat.name] || []}
+                query={query}
+                onClickTrack={() => setFrequentRefreshKey((k) => k + 1)}
+              />
+            ))
           )}
         </div>
 
-        {/* Footer */}
-        <footer className="footer">
-          <p>
-            Copyright © 2025 货代导航网 |{" "}
-            <a href="https://huodaiagent.com">huodaiagent.com</a>
+        <footer className="text-center py-2 border-t border-[#e5e5e5]/60">
+          <p className="text-[11px] text-[#a1a1a6]">
+            Copyright &copy; 2024-{new Date().getFullYear()} 仰度科技&nbsp;&nbsp;
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="text-[#a1a1a6] hover:text-[#0A84FF] transition-colors">
+              粤ICP备2023049349号-2
+            </a>
           </p>
         </footer>
       </main>
+
+      <ContactFloat />
+      <BackToTop />
+      <SubmitForm open={submitOpen} onClose={() => setSubmitOpen(false)} />
     </div>
   );
 }
-
