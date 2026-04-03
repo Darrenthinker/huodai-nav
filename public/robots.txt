@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://huodaiagent.com/sitemap.xml
-Sitemap: https://huodaiagent.com/sitemap.txt
+Sitemap: https://www.huodaiagent.com/sitemap.xml
+Sitemap: https://www.huodaiagent.com/sitemap.txt
