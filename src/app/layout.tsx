@@ -26,6 +26,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
         <meta name="theme-color" content="#f5f5f7" />
+        <meta name="baidu-site-verification" content="d4047de4c7ecb0fb8a6b6724ad739907" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
