@@ -15,10 +15,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "https://huodaiagent.com" },
-  // 必须用 metadata.other，静态导出才会写入 index.html（手写 <head> 里 meta 会被省略，导致百度/搜狗验证失败）
   other: {
     "baidu-site-verification": "codeva-3BdHycRP8V",
-    sogou_site_verification: "LTIRpgpIdS",
+    "sogou-site-verification": "153xn5eMOf",
   },
 };
 
