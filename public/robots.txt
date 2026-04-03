@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://huodaiagent.com/sitemap.xml
+Sitemap: https://huodaiagent.com/sitemap.txt
