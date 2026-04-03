@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   other: {
     "baidu-site-verification": "codeva-3BdHycRP8V",
     "sogou-site-verification": "153xn5eMOf",
+    sogou_site_verification: "153xn5eMOf",
   },
 };
 
