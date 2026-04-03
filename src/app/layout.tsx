@@ -17,8 +17,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://huodaiagent.com" },
   other: {
     "baidu-site-verification": "codeva-3BdHycRP8V",
-    "sogou-site-verification": "153xn5eMOf",
-    sogou_site_verification: "153xn5eMOf",
   },
 };
 
