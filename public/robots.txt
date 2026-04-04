@@ -1,5 +1,31 @@
 User-agent: *
 Allow: /
+Disallow: /_next/
+Disallow: /import
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+User-agent: Sogou web spider
+Allow: /
+Crawl-delay: 1
+
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 2
 
 Sitemap: https://www.huodaiagent.com/sitemap.xml
 Sitemap: https://www.huodaiagent.com/sitemap.txt

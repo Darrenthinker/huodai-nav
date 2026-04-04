@@ -40,7 +40,7 @@ function SiteLogo({ site }: { site: Site }) {
     <div className="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden bg-[#f5f5f7] ring-1 ring-inset ring-black/[0.04]">
       <img
         src={`/logos/${site.id}.png`}
-        alt=""
+        alt={`${site.title}图标`}
         width={28}
         height={28}
         className="w-7 h-7 object-contain rounded"

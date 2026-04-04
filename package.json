@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3018",
-    "build": "next build && node scripts/inject-sogou-meta.mjs",
+    "build": "next build && node scripts/inject-sogou-meta.mjs && node scripts/generate-sitemap.mjs",
     "start": "next start -p 3018",
     "lint": "next lint",
     "fetch-logos": "node scripts/fetch-all-logos.mjs"
