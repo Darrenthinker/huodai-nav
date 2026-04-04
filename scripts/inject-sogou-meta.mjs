@@ -6,7 +6,7 @@ import path from "path";
 
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, "out");
-const TAG = '<meta name="sogou_site_verification" content="lqd7fsNXYf"/>';
+const TAG = '<meta name="sogou_site_verification" content="QZuPPIlkDT"/>';
 
 function patch(file) {
   const p = path.join(OUT, file);
