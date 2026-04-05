@@ -15,7 +15,9 @@
 
 批量从「网站自己首页」抓图标（og:image / apple-touch-icon 等）：
   在项目根目录执行：
-    npm run discover-logos
+    npm run fetch-logos
+  只抓新增站点（id≥2837，含航司二字码 CDN 兜底）：
+    npm run fetch-logos:new
   可选：--limit 50   只跑前 50 个未缓存的
         --id 4328    只测一条
         --force      含 WordPress 缩略图的也重抓

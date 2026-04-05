@@ -4,7 +4,7 @@ import "./globals.css";
 const SITE_URL = "https://www.huodaiagent.com";
 const SITE_TITLE = "货代导航网 | 国际物流导航 资源 社群 | 货代agent";
 const SITE_DESC =
-  "货代导航网 - 国际物流行业最全的网址导航，涵盖国际空运、海运、快递、FBA头程、国际专线、海关查询、报关工具等561+精选资源站点。一站式货代工具导航，助力国际物流从业者高效工作。";
+  "货代导航网 - 国际物流行业最全的网址导航，涵盖国际空运、海运、快递、FBA头程、国际专线、海关查询、报关工具等800+精选资源站点。一站式货代工具导航，助力国际物流从业者高效工作。";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -14,6 +14,10 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    apple: "/favicon.png",
+  },
   title: {
     default: SITE_TITLE,
     template: "%s | 货代导航网",
@@ -69,6 +73,11 @@ export const metadata: Metadata = {
   category: "国际物流",
 };
 
+/** 避免 JSON 中出现 </script> 等序列截断 HTML 解析、导致 head 内后续样式表不生效 */
+function safeJsonForScript(obj: unknown) {
+  return JSON.stringify(obj).replace(/</g, "\\u003c");
+}
+
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -102,7 +111,7 @@ const jsonLd = [
       "@type": "ItemList",
       name: "国际物流货代导航资源",
       description: "涵盖国际空运、海运、快递、FBA头程、国际专线、海关查询等分类的货代导航资源",
-      numberOfItems: 561,
+      numberOfItems: 1260,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "自研工具", url: `${SITE_URL}/#cat-33` },
         { "@type": "ListItem", position: 2, name: "国际空运", url: `${SITE_URL}/#cat-6` },
@@ -127,20 +136,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-Hans">
-      <head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
-        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="//hm.baidu.com" />
+      <body className="font-sans antialiased min-w-0 overflow-x-hidden">
         {jsonLd.map((item, i) => (
           <script
             key={i}
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+            dangerouslySetInnerHTML={{ __html: safeJsonForScript(item) }}
           />
         ))}
-      </head>
-      <body className="font-sans antialiased">{children}</body>
+        {children}
+      </body>
     </html>
   );
 }

@@ -142,7 +142,7 @@ export function Sidebar({
               className="w-full flex items-center gap-2 px-2.5 py-[7px] rounded-md text-[12px] font-medium text-[#5ac8fa] hover:bg-white/[0.07] hover:text-[#64D2FF] transition-colors"
             >
               <Plus size={14} />
-              网址提交
+              <span>网址提交<span className="mx-0.5 text-white/20">|</span><span className="text-[#ff9f0a]">报错</span></span>
             </button>
           )}
         </div>

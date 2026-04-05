@@ -3,11 +3,18 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3018",
+    "dev": "npx --yes kill-port 3018 && next dev -p 3018",
+    "dev:clean": "npx --yes kill-port 3018 && node -e \"try{require('fs').rmSync('.next',{recursive:true,force:true})}catch(e){}\" && next dev -p 3018",
     "build": "next build && node scripts/inject-sogou-meta.mjs && node scripts/generate-sitemap.mjs",
     "start": "next start -p 3018",
+    "preview": "npx --yes serve out -l 3018",
     "lint": "next lint",
-    "fetch-logos": "node scripts/fetch-all-logos.mjs"
+    "kill-ports": "npx --yes kill-port 3018",
+    "rebuild": "node -e \"try{require('fs').rmSync('.next',{recursive:true,force:true})}catch(e){}\" && npm run build",
+    "fetch-logos": "node scripts/fetch-all-logos.mjs",
+    "fetch-logos:new": "node scripts/fetch-all-logos.mjs --min-id 2837",
+    "fetch-logos:sea": "node scripts/fetch-all-logos.mjs --min-id 3016",
+    "fetch-logos:sea-new": "node scripts/fetch-all-logos.mjs --min-id 3074"
   },
   "dependencies": {
     "next": "^15.1.0",

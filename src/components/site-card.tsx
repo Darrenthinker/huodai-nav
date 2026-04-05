@@ -9,9 +9,10 @@ import type { Site } from "@/lib/types";
 function highlight(text: string, q: string): ReactNode {
   if (!q.trim()) return text;
   const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const re = new RegExp(`(${escaped})`, "gi");
-  return text.split(re).map((part, i) =>
-    re.test(part) ? (
+  const splitRe = new RegExp(`(${escaped})`, "gi");
+  const isMatch = new RegExp(`^(${escaped})$`, "i");
+  return text.split(splitRe).map((part, i) =>
+    part && isMatch.test(part) ? (
       <mark key={i} className="bg-[#ffd60a]/30 text-inherit rounded-sm px-0.5">
         {part}
       </mark>

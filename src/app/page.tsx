@@ -25,12 +25,12 @@ export default function Home() {
   const filteredSites = useMemo(() => {
     if (!query.trim()) return allSites;
     const q = query.toLowerCase();
-    return allSites.filter(
-      (s) =>
-        s.title.toLowerCase().includes(q) ||
-        s.description.toLowerCase().includes(q) ||
-        s.category.toLowerCase().includes(q)
-    );
+    return allSites.filter((s) => {
+      const title = (s.title ?? "").toLowerCase();
+      const desc = (s.description ?? "").toLowerCase();
+      const cat = (s.category ?? "").toLowerCase();
+      return title.includes(q) || desc.includes(q) || cat.includes(q);
+    });
   }, [query]);
 
   const sitesByCategory = useMemo(() => {

@@ -6,6 +6,7 @@
  *   node scripts/fetch-all-logos.mjs          全量抓取（跳过已有的）
  *   node scripts/fetch-all-logos.mjs --force   强制重新抓取全部
  *   node scripts/fetch-all-logos.mjs --id 45   只抓一个站点
+ *   node scripts/fetch-all-logos.mjs --min-id 2837  只处理 id >= 2837（如新增航司）
  */
 
 import fs from "fs";
@@ -27,7 +28,26 @@ function parseArgs() {
   return {
     force: a.includes("--force"),
     id: a.includes("--id") ? parseInt(a[a.indexOf("--id") + 1], 10) : null,
+    minId: a.includes("--min-id") ? parseInt(a[a.indexOf("--min-id") + 1], 10) : null,
+    maxId: a.includes("--max-id") ? parseInt(a[a.indexOf("--max-id") + 1], 10) : null,
   };
+}
+
+/** 卡片标题形如 "QF 081"、"D5 992"、"EI 053 / 125" 时取二字码，用于航司图标 CDN */
+function iataFromTitle(title) {
+  const m = String(title || "")
+    .trim()
+    .match(/^([A-Z0-9]{2})\s+\d/);
+  return m ? m[1] : null;
+}
+
+function airlineLogoCandidateUrls(code) {
+  if (!code || code.length !== 2) return [];
+  const c = code.toUpperCase();
+  return [
+    `https://images.kiwi.com/airlines/128x128/${c}.png`,
+    `https://pics.avs.io/128/128/${c}.png`,
+  ];
 }
 
 function getDomain(url) {
@@ -84,7 +104,7 @@ const SKIP_PATTERNS = [
 /** 16x16 的 Google 默认地球图恰好 726 字节；小图标也无意义 */
 const MIN_USEFUL_BYTES = 800;
 
-async function fetchImage(url, timeoutMs = 12000) {
+async function fetchImage(url, timeoutMs = 8000) {
   for (const pat of SKIP_PATTERNS) {
     if (pat.test(url)) return null;
   }
@@ -116,7 +136,7 @@ async function fetchPageIcons(siteUrl) {
     const res = await fetch(siteUrl, {
       redirect: "follow",
       headers: { Accept: "text/html", "User-Agent": UA },
-      signal: AbortSignal.timeout(12000),
+      signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) return [];
     const ct = res.headers.get("content-type") || "";
@@ -161,8 +181,32 @@ function sleep(ms) {
 
 async function processSite(site) {
   const candidates = buildCandidateUrls(site);
+  const thumb = (site.thumbnail || "").trim();
+  let normalizedThumb = null;
+  if (thumb) {
+    let t = thumb;
+    if (t.startsWith("http:") && t.includes("huodaiagent.com")) {
+      t = "https:" + t.slice(5);
+    }
+    normalizedThumb = t;
+  }
 
-  for (const url of candidates) {
+  /** 缩略图 → 航司二字码 CDN（国际空运卡片，避免 Pathfinder 等聚合站 favicon）→ 域名 favicon 链 */
+  const ordered = [];
+  const seen = new Set();
+  const push = (u) => {
+    if (!u || seen.has(u)) return;
+    seen.add(u);
+    ordered.push(u);
+  };
+
+  if (normalizedThumb) push(normalizedThumb);
+  if (site.category === "国际空运") {
+    for (const u of airlineLogoCandidateUrls(iataFromTitle(site.title))) push(u);
+  }
+  for (const u of candidates) push(u);
+
+  for (const url of ordered) {
     try {
       const buf = await fetchImage(url);
       if (buf) return buf;
@@ -181,11 +225,18 @@ async function processSite(site) {
 }
 
 async function main() {
-  const { force, id } = parseArgs();
+  const { force, id, minId, maxId } = parseArgs();
   const raw = JSON.parse(fs.readFileSync(navPath, "utf-8"));
   let sites = raw.sites || [];
   if (id != null && !Number.isNaN(id)) {
     sites = sites.filter((s) => s.id === id);
+  } else {
+    if (minId != null && !Number.isNaN(minId)) {
+      sites = sites.filter((s) => s.id >= minId);
+    }
+    if (maxId != null && !Number.isNaN(maxId)) {
+      sites = sites.filter((s) => s.id <= maxId);
+    }
   }
 
   let skip = 0;
