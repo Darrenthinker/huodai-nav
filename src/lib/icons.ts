@@ -1,7 +1,7 @@
 import {
   Sparkles, Plane, Truck, Ship, Package, Route,
   Mail, Landmark, Gauge, Compass, Scale, Rss,
-  Star, type LucideIcon,
+  Star, Globe, type LucideIcon,
 } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
