@@ -1,23 +1,23 @@
 import {
-  Crosshair, Plane, Globe, Ship, Package, ArrowLeftRight,
-  Boxes, Building2, Zap, Monitor, ShieldAlert, Newspaper,
-  MoreVertical, type LucideIcon,
+  Sparkles, Plane, Truck, Ship, Package, Route,
+  Mail, Landmark, Gauge, Compass, Scale, Rss,
+  Star, type LucideIcon,
 } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
-  "fa fa-location-arrow": Crosshair,
+  "fa fa-location-arrow": Sparkles,
   "fa fa-plane": Plane,
-  "fa fa-globe": Globe,
+  "fa fa-globe": Truck,
   "fa fa-ship": Ship,
   "fa fa-amazon": Package,
-  "fa fa-arrows-h": ArrowLeftRight,
-  "fa fa-cubes": Boxes,
-  "fa fa-building": Building2,
-  "fa fa-superscript": Zap,
-  "fa fa-television": Monitor,
-  "fa fa-share": ShieldAlert,
-  "fa fa-list-alt": Newspaper,
-  "fa fa-ellipsis-v": MoreVertical,
+  "fa fa-arrows-h": Route,
+  "fa fa-cubes": Mail,
+  "fa fa-building": Landmark,
+  "fa fa-superscript": Gauge,
+  "fa fa-television": Compass,
+  "fa fa-share": Scale,
+  "fa fa-list-alt": Rss,
+  "fa fa-ellipsis-v": Star,
 };
 
 export function getIcon(faClass: string): LucideIcon {
