@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const SITE_URL = "https://www.huodaiagent.com";
-const SITE_TITLE = "货代导航网 | 国际物流导航 资源 社群 | 货代agent";
+const SITE_TITLE = "货代导航网 | 导航 资源 社群 | 货代agent";
 const SITE_DESC =
   "货代导航网 - 国际物流行业最全的网址导航，涵盖国际空运、海运、快递、FBA头程、国际专线、海关查询、报关工具等800+精选资源站点。一站式货代工具导航，助力国际物流从业者高效工作。";
 
