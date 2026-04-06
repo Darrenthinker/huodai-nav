@@ -2,7 +2,7 @@
 
 import { getIcon } from "@/lib/icons";
 import type { Category } from "@/lib/types";
-import { X, Plus, ChevronsLeft, ChevronsRight } from "lucide-react";
+import { X, Plus, ChevronsLeft, ChevronsRight, BookOpen } from "lucide-react";
 
 interface SidebarProps {
   categories: Category[];
@@ -13,11 +13,12 @@ interface SidebarProps {
   collapsed: boolean;
   onToggleCollapse: () => void;
   onSubmitClick: () => void;
+  showPromoEntry?: boolean;
 }
 
 export function Sidebar({
   categories, activeCategory, isOpen, onClose, onCategoryClick,
-  collapsed, onToggleCollapse, onSubmitClick,
+  collapsed, onToggleCollapse, onSubmitClick, showPromoEntry = false,
 }: SidebarProps) {
   const w = collapsed ? "w-[56px]" : "w-[168px]";
   const ml = collapsed ? "56px" : "168px";
@@ -134,23 +135,51 @@ export function Sidebar({
         <div className="px-2.5 pb-3 pt-1">
           <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent mb-2.5" />
           {collapsed ? (
-            <button
-              onClick={onSubmitClick}
-              className="group/tip w-full flex flex-col items-center py-[6px] px-0.5 rounded-lg text-white/30 hover:text-white/60 hover:bg-white/[0.06] transition-all duration-200"
-            >
-              <Plus size={15} strokeWidth={1.5} />
-              <span className="text-[9px] leading-none mt-1 font-medium opacity-0 group-hover/tip:opacity-100 transition-opacity duration-200">
-                提交
-              </span>
-            </button>
+            <>
+              {showPromoEntry && (
+                <a
+                  href="https://www.forwarderspn.com/spn?category=logistics-directory"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/tip w-full flex flex-col items-center py-[6px] px-0.5 rounded-lg text-blue-400/50 hover:text-blue-400/80 hover:bg-white/[0.06] transition-all duration-200 mb-0.5 animate-[fadeSlideIn_0.5s_ease-out]"
+                >
+                  <BookOpen size={15} strokeWidth={1.5} />
+                  <span className="text-[9px] leading-none mt-1 font-medium opacity-0 group-hover/tip:opacity-100 transition-opacity duration-200">
+                    黄页
+                  </span>
+                </a>
+              )}
+              <button
+                onClick={onSubmitClick}
+                className="group/tip w-full flex flex-col items-center py-[6px] px-0.5 rounded-lg text-white/30 hover:text-white/60 hover:bg-white/[0.06] transition-all duration-200"
+              >
+                <Plus size={15} strokeWidth={1.5} />
+                <span className="text-[9px] leading-none mt-1 font-medium opacity-0 group-hover/tip:opacity-100 transition-opacity duration-200">
+                  提交
+                </span>
+              </button>
+            </>
           ) : (
-            <button
-              onClick={onSubmitClick}
-              className="group w-full flex items-center gap-2.5 px-3 py-[9px] rounded-lg text-[12px] font-normal text-white/40 hover:bg-white/[0.06] hover:text-white/70 transition-all duration-200"
-            >
-              <Plus size={15} strokeWidth={1.5} />
-              <span>网址提交<span className="mx-1 text-white/15 group-hover:text-white/30">|</span><span className="text-white/30 group-hover:text-white/70">报错</span></span>
-            </button>
+            <>
+              {showPromoEntry && (
+                <a
+                  href="https://www.forwarderspn.com/spn?category=logistics-directory"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center gap-2.5 px-3 py-[9px] rounded-lg text-[12px] font-normal text-blue-400/50 hover:bg-white/[0.06] hover:text-blue-400/80 transition-all duration-200 mb-0.5 animate-[fadeSlideIn_0.5s_ease-out]"
+                >
+                  <BookOpen size={15} strokeWidth={1.5} />
+                  <span>货代黄页</span>
+                </a>
+              )}
+              <button
+                onClick={onSubmitClick}
+                className="group w-full flex items-center gap-2.5 px-3 py-[9px] rounded-lg text-[12px] font-normal text-white/40 hover:bg-white/[0.06] hover:text-white/70 transition-all duration-200"
+              >
+                <Plus size={15} strokeWidth={1.5} />
+                <span>网址提交<span className="mx-1 text-white/15 group-hover:text-white/30">|</span><span className="text-white/30 group-hover:text-white/70">报错</span></span>
+              </button>
+            </>
           )}
         </div>
       </aside>

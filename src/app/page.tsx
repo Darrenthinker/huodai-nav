@@ -9,6 +9,7 @@ import { CategorySection } from "@/components/category-section";
 import { BackToTop } from "@/components/back-to-top";
 import { ContactFloat } from "@/components/contact-float";
 import { SubmitForm } from "@/components/submit-form";
+import { PromoPopup } from "@/components/promo-popup";
 import { Search } from "lucide-react";
 
 const categories = getCategories();
@@ -21,6 +22,17 @@ export default function Home() {
   const [collapsed, setCollapsed] = useState(false);
   const [submitOpen, setSubmitOpen] = useState(false);
   const [frequentRefreshKey, setFrequentRefreshKey] = useState(0);
+  const [showPromoEntry, setShowPromoEntry] = useState(false);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("huodai_promo_v2");
+      if (raw) {
+        const data = JSON.parse(raw);
+        if (data.filled) setShowPromoEntry(true);
+      }
+    } catch { /* */ }
+  }, []);
 
   const filteredSites = useMemo(() => {
     if (!query.trim()) return allSites;
@@ -87,6 +99,7 @@ export default function Home() {
         collapsed={collapsed}
         onToggleCollapse={() => setCollapsed((v) => !v)}
         onSubmitClick={() => setSubmitOpen(true)}
+        showPromoEntry={showPromoEntry}
       />
 
       <main className={`flex-1 ${mainMl} min-w-0 transition-[margin] duration-250 ease-out`}>
@@ -131,6 +144,7 @@ export default function Home() {
       <ContactFloat />
       <BackToTop />
       <SubmitForm open={submitOpen} onClose={() => setSubmitOpen(false)} />
+      <PromoPopup onFilled={() => setShowPromoEntry(true)} />
     </div>
   );
 }
