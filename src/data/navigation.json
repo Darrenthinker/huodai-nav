@@ -3349,7 +3349,7 @@
       "description": "阿联酋航空",
       "category": "国际空运",
       "order": 1950.2,
-      "thumbnail": "http://huodaiagent.com/wp-content/uploads/2023/08/o_2459.png"
+      "thumbnail": ""
     },
     {
       "id": 1963,
@@ -6683,11 +6683,20 @@
     },
     {
       "id": 3554,
-      "title": "I9 中州航空",
+      "title": "I9 959",
       "url": "https://www.centralairlines.com/zh/",
-      "description": "中州航空 综合航空物流服务商",
+      "description": "中州航空 Central Airlines",
       "category": "国际空运",
       "order": 996.9998190000005,
+      "thumbnail": ""
+    },
+    {
+      "id": 3555,
+      "title": "9C 089",
+      "url": "https://www.ch.com/",
+      "description": "春秋航空 Spring Airlines",
+      "category": "国际空运",
+      "order": 996.9998180000005,
       "thumbnail": ""
     },
     {
