@@ -64,10 +64,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: { canonical: SITE_URL },
+  verification: {
+    google: "pmDxvr0zRP3usJAgAnXlP_UQ5Aj42JAfJkWR9c1XCCc",
+  },
   other: {
     "baidu-site-verification": "codeva-3BdHycRP8V",
     "msvalidate.01": "",
-    "google-site-verification": "",
     "applicable-device": "pc,mobile",
   },
   category: "国际物流",
