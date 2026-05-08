@@ -94,6 +94,19 @@
           "value": "public, max-age=0, must-revalidate, no-cache"
         }
       ]
+    },
+    {
+      "source": "/googlea1947c1fd18ad5d2.html",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate, no-cache"
+        }
+      ]
     }
   ]
 }
