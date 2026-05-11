@@ -1626,7 +1626,7 @@
     {
       "id": 2393,
       "title": "口岸物流网",
-      "url": "www.dpn.com.cn",
+      "url": "https://www.dpn.com.cn/",
       "description": "大连DPN",
       "category": "国际海运",
       "order": 1996.891,
@@ -3642,7 +3642,7 @@
     {
       "id": 2335,
       "title": "IRISL 伊朗国航",
-      "url": "www.irislgroup.com",
+      "url": "https://www.irislgroup.com/",
       "description": "Islamic Republic of Iran 伊朗",
       "category": "国际海运",
       "order": 1946.8,
@@ -3696,7 +3696,7 @@
     {
       "id": 2340,
       "title": "ESL 阿联酋航运",
-      "url": "https://www6.emiratesline.com/",
+      "url": "https://www.emiratesline.com/",
       "description": "Emirates Shipping Line 阿联酋",
       "category": "国际海运",
       "order": 1946.3,
