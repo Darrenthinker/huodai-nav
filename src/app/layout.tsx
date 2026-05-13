@@ -4,7 +4,7 @@ import "./globals.css";
 const SITE_URL = "https://www.huodaiagent.com";
 const SITE_TITLE = "货代导航网 | 导航 资源 社群 | 货代agent";
 const SITE_DESC =
-  "货代导航网 - 国际物流行业最全的网址导航，涵盖国际空运、海运、快递、FBA头程、国际专线、海关查询、报关工具等800+精选资源站点。一站式货代工具导航，助力国际物流从业者高效工作。";
+  "货代导航网收录国际物流与货代行业常用网站，涵盖空运追踪、海运船期、国际快递、FBA头程、专线小包、海关报关、外贸工具、新闻资讯和行业社群，帮助货代从业者快速查找资源、提升报价与操作效率。";
 
 export const viewport: Viewport = {
   width: "device-width",
