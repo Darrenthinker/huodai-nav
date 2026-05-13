@@ -1,24 +1,20 @@
-<!-- VERCEL BEST PRACTICES START -->
-## Best practices for developing on Vercel
+# 货代导航网 - AI 协作指南
 
-These defaults are optimized for AI coding agents (and humans) working on apps that deploy to Vercel.
+## 核心规则
+1. **不要修改现有 UI 界面**。界面已定型，只完善数据和功能逻辑。
+2. 端口固定为 **3018**，不要更改。
+3. 这是**静态导出**项目 (next export)，不能使用需要服务器端运行时的 Next.js 功能。
+4. 数据核心文件是 `src/data/navigation.json`，改动需谨慎。
 
-- Treat Vercel Functions as stateless + ephemeral (no durable RAM/FS, no background daemons), use Blob or marketplace integrations for preserving state
-- Edge Functions (standalone) are deprecated; prefer Vercel Functions
-- Don't start new projects on Vercel KV/Postgres (both discontinued); use Marketplace Redis/Postgres instead
-- Store secrets in Vercel Env Variables; not in git or `NEXT_PUBLIC_*`
-- Provision Marketplace native integrations with `vercel integration add` (CI/agent-friendly)
-- Sync env + project settings with `vercel env pull` / `vercel pull` when you need local/offline parity
-- Use `waitUntil` for post-response work; avoid the deprecated Function `context` parameter
-- Set Function regions near your primary data source; avoid cross-region DB/service roundtrips
-- Tune Fluid Compute knobs (e.g., `maxDuration`, memory/CPU) for long I/O-heavy calls (LLMs, APIs)
-- Use Runtime Cache for fast **regional** caching + tag invalidation (don't treat it as global KV)
-- Use Cron Jobs for schedules; cron runs in UTC and triggers your production URL via HTTP GET
-- Use Vercel Blob for uploads/media; Use Edge Config for small, globally-read config
-- If Enable Deployment Protection is enabled, use a bypass secret to directly access them
-- Add OpenTelemetry via `@vercel/otel` on Node; don't expect OTEL support on the Edge runtime
-- Enable Web Analytics + Speed Insights early
-- Use AI Gateway for model routing, set AI_GATEWAY_API_KEY, using a model string (e.g. 'anthropic/claude-sonnet-4.6'), Gateway is already default in AI SDK
-  needed. Always curl https://ai-gateway.vercel.sh/v1/models first; never trust model IDs from memory
-- For durable agent loops or untrusted code: use Workflow (pause/resume/state) + Sandbox; use Vercel MCP for secure infra access
-<!-- VERCEL BEST PRACTICES END -->
+## 数据流
+WordPress XML → import 页面解析 → navigation.json → 静态页面渲染
+
+## 部署方式
+仅部署到 **Cloudflare Pages**（不使用 Vercel）。
+
+- 构建命令: `npm run build`
+- 输出目录: `out`
+- 边缘配置走 Cloudflare Pages 原生文件：
+  - `public/_redirects` —— 重定向规则（构建后输出到 `out/_redirects`）
+  - `public/_headers` —— 自定义响应头（构建后输出到 `out/_headers`）
+- 域名（apex 与 www）均接入同一个 Pages 项目，Cloudflare 管 DNS。
