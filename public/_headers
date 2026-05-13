@@ -1,0 +1,34 @@
+# Cloudflare Pages custom response headers
+# Match path on one line, followed by header lines indented with two spaces.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/logos/*
+  Cache-Control: public, max-age=2592000, immutable
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/sitemap.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/baidu_verify_codeva-3BdHycRP8V.html
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+
+/sogousiteverification.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+
+/googlea1947c1fd18ad5d2.html
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
