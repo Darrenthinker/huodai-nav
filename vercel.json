@@ -3,6 +3,93 @@
   "buildCommand": "npm run build",
   "outputDirectory": "out",
   "framework": null,
+  "redirects": [
+    {
+      "source": "/single-page",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/single-page/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sites/:id(\\d+).html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sites/:id(\\d+).html/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:slug*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:slug*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-includes/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-json/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
