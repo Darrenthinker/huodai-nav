@@ -216,17 +216,14 @@ async function processSite(site) {
   if (site.category === "国际空运") {
     for (const u of airlineLogoCandidateUrls(iataFromTitle(site.title))) push(u);
   }
+
+  /** 首页解析的 logo / icon（优先于通用 favicon CDN，避免误用聚合站小图标） */
+  const pageIcons = await fetchPageIcons(site.url);
+  for (const u of pageIcons) push(u);
+
   for (const u of candidates) push(u);
 
   for (const url of ordered) {
-    try {
-      const buf = await fetchImage(url);
-      if (buf) return buf;
-    } catch {}
-  }
-
-  const pageIcons = await fetchPageIcons(site.url);
-  for (const url of pageIcons) {
     try {
       const buf = await fetchImage(url);
       if (buf) return buf;
