@@ -169,6 +169,18 @@ async function fetchPageIcons(siteUrl) {
         try { found.push(new URL(u, base).href); } catch {}
       }
     }
+
+    /** 站点页头 <a class="logo"><img src="...logo.png">（美剧窝、爱美剧天堂等） */
+    const logoImgRe = /<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi;
+    while ((m = logoImgRe.exec(html)) !== null) {
+      const src = m[1].trim();
+      if (!src || !/logo/i.test(src)) continue;
+      if (!/\.(png|jpe?g|webp|gif)(\?|#|$)/i.test(src)) continue;
+      try {
+        found.unshift(new URL(src, base).href);
+      } catch {}
+    }
+
     return found;
   } catch {
     return [];
