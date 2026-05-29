@@ -1,9 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Search, Menu, Megaphone } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import { FrequentLinks } from "./frequent-links";
-import { AdBookingPanel } from "./ad-booking-modal";
 
 interface SearchHeaderProps {
   query: string;
@@ -17,22 +15,6 @@ export function SearchHeader({
   query, onChange, onMenuClick, filteredCount, frequentRefreshKey,
 }: SearchHeaderProps) {
   const isSearching = query.trim().length > 0;
-  const [adOpen, setAdOpen] = useState(false);
-  const btnRef = useRef<HTMLButtonElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!adOpen) return;
-    const handler = (e: MouseEvent) => {
-      if (
-        btnRef.current?.contains(e.target as Node) ||
-        panelRef.current?.contains(e.target as Node)
-      ) return;
-      setAdOpen(false);
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [adOpen]);
 
   return (
     <header className="sticky top-0 z-30 bg-[#f5f5f7]/80 backdrop-blur-xl border-b border-[#d2d2d7]/40">
@@ -66,21 +48,6 @@ export function SearchHeader({
                 找到 {filteredCount} 个结果
               </span>
             )}
-          </div>
-
-          {/* 右侧广告入口 */}
-          <div className="relative flex-shrink-0">
-            <button
-              ref={btnRef}
-              type="button"
-              onClick={() => setAdOpen((v) => !v)}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-medium text-[#0071e3] bg-[#0071e3]/[0.06] hover:bg-[#0071e3]/[0.12] border border-[#0071e3]/15 transition-all"
-            >
-              <Megaphone size={11} />
-              <span className="hidden sm:inline">广告位</span>
-            </button>
-
-            {adOpen && <AdBookingPanel ref={panelRef} onClose={() => setAdOpen(false)} />}
           </div>
         </div>
 
