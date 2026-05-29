@@ -1,0 +1,47 @@
+﻿# .cursorignore — 排除这些路径不进入 AI 默认上下文
+# 需要时用 @ 手动引用即可
+
+# === 依赖 ===
+node_modules/
+
+# === 构建产物 ===
+.next/
+out/
+dist/
+build/
+
+# === 版本控制 ===
+.git/
+
+# === 平台 / 部署 ===
+.vercel/
+
+# === 自动生成 / 历史记录 ===
+.specstory/
+
+# === 日志 ===
+*.log
+npm-debug.log*
+logs/
+
+# === 缓存 ===
+.cache/
+.turbo/
+.swc/
+
+# === 体积大的静态资源 ===
+public/logos/
+public/favicons/
+
+# === 自动生成的锁文件 ===
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# === 数据脚本临时产出 ===
+scripts/logo-failed.json
+
+# === 系统文件 ===
+.DS_Store
+Thumbs.db
+*.pem

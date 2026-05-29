@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Saee | Track Your Shipment</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://www.saee.sa/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="https://www.saee.sa/css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="https://www.saee.sa/css/Custom.css" rel="stylesheet" />
+
+    <style>
+        @font-face {
+            font-family: "URWGeometric-Regular";
+            src: local("URWGeometric-Regular"),
+            url("/fonts/URWGeometric-Regular.woff2") format("woff2");
+            /* Add additional src lines for different font formats if necessary */
+        }
+
+        @font-face {
+            font-family: "Cairo-Regular";
+            src: local("Cairo-Regular"),
+            url("/fonts/arabic/Cairo-Regular.ttf") format("ttf");
+            /* Add additional src lines for different font formats if necessary */
+        }
+
+        body {
+            font-family: "Cairo-Regular", "URWGeometric-Regular", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<main>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://www.saee.sa/images/Saee_Logo.svg"
+                /></a>
+
+            <a target="_blank" href="https://www.saee.sa/companyprofile/SaeeProfile_2024.pdf" class="btn custom-btn d-lg-none ms-auto me-4"
+            >Download</a
+            >
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                    <li class="nav-item">
+                        <a target="_blank" class="btn custom-btn d-lg-block d-none" href="https://corporate.saeex.com/registercompany">Register Company</a>
+                    </li>
+                </ul>
+
+                <a target="_blank" href="https://www.saee.sa/companyprofile/SaeeProfile_2024.pdf" class="btn custom-btn d-lg-block d-none">Download Profile</a>
+            </div>
+        </div>
+    </nav>
+
+<!-- main is closed in footer -->
+
+
+        <section class="hero-section" id="section_1" style="background-image: url('https://www.saee.sa/images/Coming-Soon-BG.png'); background-size: cover; background-position: center; height: 100vh;">
+            <div class="section-overlay"></div>
+
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row">
+                    <div class="col-12 mb-5 mt-10 text-center">
+                        <h1 class="text-white" style="margin-top: 30px;">Track your Baggage</h1>
+
+                        <div class="input-group mt-3 d-flex justify-content-center">
+                            <form id="trackForm" action="https://www.saee.sa/en/track-your-shipment" method="get" class="input-group">
+                                <input type="hidden" name="_token" value="lnm1JNadC5FiEGdR9sbO4oSxAKcYEVjeTfb4KF9d" autocomplete="off">                                <div class="form-outline rounded d-flex ">
+                                    <input
+                                        type="search"
+                                        id="waybillInput"
+                                        name="waybill" 
+                                        class="form-control text-white"
+                                        placeholder="Enter Shipment/Baggage Number"
+                                        onkeydown="if (event.keyCode == 13) trackShipment(event);"
+                                    />
+                                    <button style="border:none;border-right: 1px solid white;" type="button" class="btn btn-primary" onclick="trackShipment()">
+                                        <img src="https://www.saee.sa/images/Search-Icon.svg" width="20px" height="20px" />
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="container col-lg-12 d-flex flex-column flex-lg-row text-center"
+            >
+
+
+                <div class="container col-lg-4 footer-contact align-items-end">
+                    <p>8002444409</p>
+                    <ul class="d-flex">
+                        <h6>Follow Us:</h6>
+                        <li>
+                            <a href="https://www.facebook.com/Saeelogistics/" target="_blank"
+                            ><img
+                                    src="https://www.saee.sa/images/Facebook.svg"
+                                    width="20px"
+                                    height="auto"
+                                /></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/getsaee" target="_blank"
+                            ><img
+                                    src="https://www.saee.sa/images/Twitter.svg"
+                                    width="20px"
+                                    height="auto"
+                                /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/getsaee/" target="_blank"
+                            ><img
+                                    src="https://www.saee.sa/images/Instagram.svg"
+                                    width="20px"
+                                    height="auto"
+                                /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/getsaee/mycompany/" target="_blank"
+                            ><img
+                                    src="https://www.saee.sa/images/Linkedin.svg"
+                                    width="20px"
+                                    height="auto"
+                                /></a>
+                        </li>
+                    </ul>
+
+                    <p>
+                        © 2026 Saee. All rights reserved.
+                    </p>
+                </div>
+            </div>
+
+           
+
+        </section>
+
+
+<!-- JAVASCRIPT FILES -->
+<script>
+    (function () {
+        const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 80;
+
+        let today = new Date(),
+            dd = String(today.getDate()).padStart(2, "0"),
+            mm = String(today.getMonth() + 1).padStart(2, "0"),
+            yyyy = today.getFullYear(),
+            nextYear = yyyy + 1,
+            dayMonth = "09/30/",
+            birthday = dayMonth + yyyy;
+
+        today = mm + "/" + dd + "/" + yyyy;
+        if (today > birthday) {
+            birthday = dayMonth + nextYear;
+        }
+        //end
+
+        const countDown = new Date(birthday).getTime(),
+            x = setInterval(function () {
+                const now = new Date().getTime(),
+                    distance = countDown - now;
+
+                (document.getElementById("days").innerText = Math.floor(
+                    distance / day
+                )),
+                    (document.getElementById("hours").innerText = Math.floor(
+                        (distance % day) / hour
+                    )),
+                    (document.getElementById("minutes").innerText = Math.floor(
+                        (distance % hour) / minute
+                    )),
+                    (document.getElementById("seconds").innerText = Math.floor(
+                        (distance % minute) / second
+                    ));
+
+                //do something later when date is reached
+                if (distance < 0) {
+                    document.getElementById("headline").innerText =
+                        "It's my birthday!";
+                    document.getElementById("countdown").style.display = "none";
+                    document.getElementById("content").style.display = "block";
+                    clearInterval(x);
+                }
+                //seconds
+            }, 0);
+    })();
+</script>
+<script src="https://www.saee.sa/js/jquery.min.js"></script>
+<script src="https://www.saee.sa/js/bootstrap.min.js"></script>
+<script src="https://www.saee.sa/js/jquery.sticky.js"></script>
+<script src="https://www.saee.sa/js/click-scroll.js"></script>
+<script src="https://www.saee.sa/js/custom.js"></script>
+    <!-- scripts here for coming soon page only -->
+    <script>
+        function trackShipment(event) {
+            // Get the value entered by the user
+            var waybill = $('#waybillInput').val();
+
+            // Check if the waybill is not empty
+            if (waybill.trim() !== '') {
+                // Redirect to the tracking page with the waybill and locale as query parameters
+                window.location.href = "https://www.saee.sa/en/track-your-shipment?waybill=" + encodeURIComponent(waybill);
+            } else {
+                // Handle the case when the user didn't enter a waybill
+                alert('Please enter a valid waybill number.');
+
+                // Prevent the default form submission behavior
+                event.preventDefault();
+            }
+        }
+    </script>
+
+</main>
+</body>
+</html>

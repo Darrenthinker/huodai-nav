@@ -1,0 +1,1569 @@
+﻿64/1209
+128/1209
+192/1209
+256/1209
+320/1209
+384/1209
+448/1209
+512/1209
+576/1209
+640/1209
+704/1209
+768/1209
+832/1209
+896/1209
+960/1209
+1024/1209
+1088/1209
+1152/1209
+1209/1209
+{
+  "total": 1209,
+  "failed": 386,
+  "bad": [
+    {
+      "u": "https://www.rlcarriers.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://202.127.48.145:8888/zscq/search/jsp/vBrandSearchIndex.jsp",
+      "code": 412
+    },
+    {
+      "u": "https://alltrack.org/",
+      "code": 403
+    },
+    {
+      "u": "https://www.cnbc.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.reuters.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.mrhua.net/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://splcgk.court.gov.cn/gzfwww/",
+      "code": 412
+    },
+    {
+      "u": "https://swapp.singlewindow.cn/qspserver/sw/qsp/query/view/major",
+      "code": 403
+    },
+    {
+      "u": "http://zxgk.court.gov.cn/shixin/",
+      "code": 403
+    },
+    {
+      "u": "https://www.myshiptracking.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.vesselfinder.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://swapp.singlewindow.cn/qspserver/sw/qsp/query/view/import?title=%E9%80%9A%E5%85%B3%E5%85%A8%E6%B5%81%E7%A8%8B%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2",
+      "code": 403
+    },
+    {
+      "u": "http://online.customs.gov.cn/static/pages/mySearch.html",
+      "code": 403
+    },
+    {
+      "u": "https://www.gsxt.gov.cn/index.html",
+      "code": 521
+    },
+    {
+      "u": "https://credit.gd.gov.cn/",
+      "code": 403
+    },
+    {
+      "u": "https://flightaware.com/",
+      "code": 403
+    },
+    {
+      "u": "https://dct.dhl.com/",
+      "code": 503
+    },
+    {
+      "u": "https://www.sse.net.cn/home",
+      "code": 403
+    },
+    {
+      "u": "http://tradedoc.mofcom.gov.cn/TradeDoc/do/dz/tradedoc~1000_1000~0.html",
+      "code": 503
+    },
+    {
+      "u": "https://www.nytimes.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.nytimes.com/article/trump-tariffs-canada-mexico-china.html",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://cx.nbct.com.cn:7002/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://willport.nbdxct.com/Pages/default.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.3tcport.com/Home/ContGoodsInfoView",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.eportyun.com/",
+      "code": 403
+    },
+    {
+      "u": "https://yzct.nbport.com.cn/report/",
+      "code": 404
+    },
+    {
+      "u": "https://www.nbport.com.cn/NBPort_Search/public/search/cqxx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.flightradar24.com/42.62,25.52/6",
+      "code": 403
+    },
+    {
+      "u": "https://planefinder.net/",
+      "code": 403
+    },
+    {
+      "u": "http://msict.nbport.com.cn/mall-portal/index.html",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://csct.nbport.com.cn/system/test/cqcx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://hs.e-to-china.com.cn/?type=ks",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.amz123.com/",
+      "code": 404
+    },
+    {
+      "u": "http://online.customs.gov.cn/ociswebserver/pages/jckspsl/index.html",
+      "code": 403
+    },
+    {
+      "u": "https://e.chinaport.gov.cn/",
+      "code": 403
+    },
+    {
+      "u": "https://www.iata.org/en/about/members/airline-list/",
+      "code": 403
+    },
+    {
+      "u": "https://guxiaobei.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.radarbox.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://credit.customs.gov.cn/ccppwebserver/pages/ccpp/html/ccppindex.html",
+      "code": 403
+    },
+    {
+      "u": "https://amr.sz.gov.cn/outer/entSelect/gs.html",
+      "code": 521
+    },
+    {
+      "u": "https://wap-asia.fedex.com/hkodds/en-hk/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.e-services.cr.gov.hk/ICRIS3EP/system/dashboard/e-search.do",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://eport.cmp1872.com/",
+      "code": 404
+    },
+    {
+      "u": "https://kjrate.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://bbs.ichuanglan.com/forum.php",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://www.importyeti.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.commerce.gov/",
+      "code": 403
+    },
+    {
+      "u": "www.dpn.com.cn",
+      "err": "Failed to parse URL from www.dpn.com.cn"
+    },
+    {
+      "u": "https://www.jx-c.com.cn/xctgonline/login.html",
+      "code": 403
+    },
+    {
+      "u": "https://cargorelease.lines.coscoshipping.com/login",
+      "code": 404
+    },
+    {
+      "u": "https://www.ytedi.com/index/xinxifuwu",
+      "code": 412
+    },
+    {
+      "u": "https://www.ups.com/cn/zh/support/shipping-support/shipping-costs-rates/fuel-surcharges.page",
+      "code": 503
+    },
+    {
+      "u": "https://www.xsct.com.cn/new/(S(fizobucdy3wsnaww2bxkszkt))/CustomerQueryContainerTab.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://web.wtocenter.org.tw/tariff/search_byProducts.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.qingdao-port.net/",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://bbs.fobshanghai.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.aat.com.hk/zh-hans",
+      "code": 403
+    },
+    {
+      "u": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?MeasText=&amp;Lang=en&amp;StartPub=&amp;",
+      "code": 500
+    },
+    {
+      "u": "https://www.cad.gov.hk/sc/previous_surcharge.html",
+      "code": 404
+    },
+    {
+      "u": "https://portal.lbct.com/CargoSearch",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.apmterminals.com/en/los-angeles/online-services/container-tracking",
+      "code": 404
+    },
+    {
+      "u": "https://t30.tideworks.com/fc-T30/default.do",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.lynden.com/aml/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.oaklandseaport.com/facilities/seaport-facilities",
+      "code": 403
+    },
+    {
+      "u": "https://www.portofoakland.com/",
+      "code": 403
+    },
+    {
+      "u": "https://operations.portofvirginia.com/maps-directions/",
+      "code": 404
+    },
+    {
+      "u": "https://www.matson.com/matnav/ports/oakland.html",
+      "code": 403
+    },
+    {
+      "u": "https://ec.europa.eu/taxation_customs/dds2/eos/eori_validation.jsp?Lang=en",
+      "code": 500
+    },
+    {
+      "u": "https://new-webportal.fcllogistics.com/WebForms/Login.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://new-webportal.pricetransfer.com/WebForms/Login.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://sbweb.customspecializedservices.com/WebForms/Login.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://cestracking.calcartage.com/WebForms/Login.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.zzcargo.com/query/1",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://wwwapps.ups.com/ctc/request?loc=en_CN",
+      "code": 503
+    },
+    {
+      "u": "https://delivery.dhl.com/",
+      "code": 503
+    },
+    {
+      "u": "https://www.ups.com/dropoff?loc=en_US",
+      "code": 503
+    },
+    {
+      "u": "https://www.ups.com/vn/en/business-solutions/ups-billing.page",
+      "code": 503
+    },
+    {
+      "u": "http://222.209.86.130:8082/#/search",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://trends.google.com/trends?geo=US&amp;hl=en-US",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.fedex.com/payment/",
+      "code": 503
+    },
+    {
+      "u": "https://www.fedex.com/paynow/payment",
+      "code": 503
+    },
+    {
+      "u": "https://www.smarty.com/products/single-address",
+      "code": 429
+    },
+    {
+      "u": "https://www.zauba.com/hs_code_search",
+      "code": 403
+    },
+    {
+      "u": "www.anaf.ro",
+      "err": "Failed to parse URL from www.anaf.ro"
+    },
+    {
+      "u": "https://01234567.feishu.cn/wiki/AjBqwyp5yisP60kvNGAchQtSn7b",
+      "code": 404
+    },
+    {
+      "u": "https://www.unitedstateszipcodes.org/",
+      "code": 403
+    },
+    {
+      "u": "https://www.canadapost-postescanada.ca/cpc/en/tools/find-a-postal-code.page",
+      "code": 500
+    },
+    {
+      "u": "https://www.commerce.gov.in/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.google.com/maps",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.exportgenius.in/hs-code/brazil/and",
+      "code": 403
+    },
+    {
+      "u": "https://www.gov.br/receitafederal/pt-br",
+      "code": 403
+    },
+    {
+      "u": "https://www.dubai.ae/",
+      "code": 403
+    },
+    {
+      "u": "https://zatca.gov.sa/en/eServices/Pages/TaxpayerLookup.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.google.com/maps/d/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.airchinacargo.com/cargo_en/gzcx/hkyd/list/index_pc.html",
+      "code": 412
+    },
+    {
+      "u": "https://translate.google.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.cn.ca/en/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://cargo.shenzhenair.com/Query/AwbSearch.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.etihadcargo.com/en",
+      "code": 503
+    },
+    {
+      "u": "https://www.hnacargo.com/Portal2/Index.aspx",
+      "code": 404
+    },
+    {
+      "u": "https://www.matson.com/",
+      "code": 403
+    },
+    {
+      "u": "https://cargo.china-airlines.com/ccnetv2/content/home/index.aspx",
+      "code": 503
+    },
+    {
+      "u": "https://www.cpr.ca/en/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.matson.com/matnav/ports/index.html",
+      "code": 403
+    },
+    {
+      "u": "https://eskycargo.emirates.com/app/offerandorder/#/home/find-offer",
+      "code": 403
+    },
+    {
+      "u": "https://www.cma-cgm.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.hapag-lloyd.com/en/home.html",
+      "code": 403
+    },
+    {
+      "u": "www.irislgroup.com",
+      "err": "Failed to parse URL from www.irislgroup.com"
+    },
+    {
+      "u": "https://www.nca.aero/e/index.html",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://www.deltacargo.com/Cargo/trackShipment",
+      "code": 503
+    },
+    {
+      "u": "https://www.interasia.cc/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.grimaldi.napoli.it/en/index.html",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.fesco.com/en/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.seaboardmarine.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.hkaircargo.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.aircargo.ups.com/en-us/tracking",
+      "code": 404
+    },
+    {
+      "u": "https://www.hawaiianaircargo.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.anl.com.au/",
+      "code": 403
+    },
+    {
+      "u": "https://www.apl.com/ebusiness/tracking",
+      "code": 403
+    },
+    {
+      "u": "https://www.cnc-line.cn/",
+      "code": 403
+    },
+    {
+      "u": "https://www.cevalogistics.com/en",
+      "code": 403
+    },
+    {
+      "u": "https://www.airnewzealandcargo.com/cargo-track-and-trace",
+      "code": 404
+    },
+    {
+      "u": "http://www.containerships.eu/",
+      "code": 403
+    },
+    {
+      "u": "https://www.aerounion.com.mx/icargoauportal/portal/loginFlow",
+      "code": 404
+    },
+    {
+      "u": "https://cargo.pal.com.ph/Tracking/AWB",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.latamcargo.com/en/",
+      "code": 403
+    },
+    {
+      "u": "https://www.csa.cz/cz-en/cargo/#current_ti-tab-15471",
+      "code": 403
+    },
+    {
+      "u": "https://mycargo.amerijet.com/tracking",
+      "code": 403
+    },
+    {
+      "u": "https://amcargo.aeromexico.com/track",
+      "code": 403
+    },
+    {
+      "u": "https://uat6ecargo.goindigo.in/",
+      "code": 403
+    },
+    {
+      "u": "https://www.ia-cargo.com/products",
+      "code": 403
+    },
+    {
+      "u": "https://saudiacargo.com/e-services/track-shipment",
+      "code": 404
+    },
+    {
+      "u": "https://ic.saman-cargo.net/tracking",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.hnacargo.com/Portal2/AwbSearch.aspx",
+      "code": 404
+    },
+    {
+      "u": "https://ols.gzinternetcourt.gov.cn/",
+      "code": 403
+    },
+    {
+      "u": "https://cargoportal.airincheon.co.kr/tracking/viewTraceAirWaybill.do?lang=en",
+      "code": 400
+    },
+    {
+      "u": "https://www.airfreightabc.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.kalittaair.com/utilities/track-cargo",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://pagespeed.web.dev/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://ktla.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.abdpost.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.newsweek.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://twitter.com/home",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.reddit.com/r/popular/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://nypost.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.meijuwo.cc/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.acronymfinder.com/",
+      "code": 403
+    },
+    {
+      "u": "cursor.com",
+      "err": "Failed to parse URL from cursor.com"
+    },
+    {
+      "u": "https://arc.tencent.com/zh/ai-demos/faceRestoration",
+      "code": 404
+    },
+    {
+      "u": "https://paywallbuster.com/",
+      "code": 521
+    },
+    {
+      "u": "https://immersivetranslate.com/zh-Hans/",
+      "code": 403
+    },
+    {
+      "u": "https://grok.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://gemini.google.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://chatgpt.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.perplexity.ai/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.chatpdf.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.latamcargo.com/",
+      "code": 403
+    },
+    {
+      "u": "https://airasiaindia.cargoflash.com/Tracking/AWB",
+      "code": 401
+    },
+    {
+      "u": "http://195.64.139.84/datacair.com/track-trace/index.php",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.airseychelles.com/portals/cargotracker/",
+      "code": 429
+    },
+    {
+      "u": "https://nastracking.awery.com/",
+      "code": 403
+    },
+    {
+      "u": "https://booking.ita-airways-cargo.com/#/trackAndTrace",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://icargonet.ibsplc.aero/pgportal/portal/trackshipments?&trkTxnValue=829-",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.cargologicair.com/cargo-tracking/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.sychene.com/Tracking.aspx",
+      "code": 404
+    },
+    {
+      "u": "https://www.fedex.com/apps/fedextrack/",
+      "code": 503
+    },
+    {
+      "u": "https://www.elal.com/en/Cargo/Pages/Online-Tracking.aspx",
+      "code": 403
+    },
+    {
+      "u": "http://www.bringeraircargo.com/tracking/",
+      "code": 404
+    },
+    {
+      "u": "http://egyptair-cargo.com/home.htm",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.copacargo.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.inselaircargo.com/Tracking.2561",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://cargo.jejuair.net/cargo/main.do",
+      "code": 403
+    },
+    {
+      "u": "http://web.ana-aviation.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://cargo.jetairways.com/cargoview/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.lancargo.com/",
+      "code": 403
+    },
+    {
+      "u": "http://prdcgofz.mercator.com/skychain/app?service=page/nwp:Trackshipmt",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.aviancacargo.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://lascargo.com/en/tracking-en/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.latamcargo.com/en/trackshipment",
+      "code": 403
+    },
+    {
+      "u": "http://www.liat.com/navSource.html?page_id=159",
+      "code": 404
+    },
+    {
+      "u": "https://www.mea.com.lb/english/Plan-and-Book/Cargo",
+      "code": 403
+    },
+    {
+      "u": "http://cargo.malindoair.com/AWBTracking.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://norsetracking.awery.com/",
+      "code": 403
+    },
+    {
+      "u": "http://www.mcs-aerocarga.com/trackingMam.php?Idioma=Ing",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.mercuryamericas.com/tracking.html",
+      "code": 404
+    },
+    {
+      "u": "https://cargo.rayaairways.com/Tracking/AWB/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://solarcargo.cargolink.aero/tracking/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.deltacargo.com/Cargo/",
+      "code": 503
+    },
+    {
+      "u": "http://www.pegasuscargo.com/en/default.aspx",
+      "code": 404
+    },
+    {
+      "u": "http://www.southamericanairways.com/tracking_summary.asp",
+      "code": 404
+    },
+    {
+      "u": "https://www.swacargo.com/swacargo_com_ui/manage/tracking",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.olympicair.com/en/Info/Cargo",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "http://www.sata.pt/en/other-services/cargo-tracking",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://tools.swissworldcargo.com/en/track_n_trace",
+      "code": 403
+    },
+    {
+      "u": "http://www.brcargo.com/ec_web/Default.aspx",
+      "code": 404
+    },
+    {
+      "u": "http://apps.traxon.com/rg042.htm",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.aviancacargo.com",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.uni-top.com:8081/CargoTracking/queryWaybill.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.aclcargo.com/trackCargo.php",
+      "code": 404
+    },
+    {
+      "u": "https://www.bahri.sa/en/logistic-services/",
+      "code": 403
+    },
+    {
+      "u": "http://tracecargo.info/track.php",
+      "code": 404
+    },
+    {
+      "u": "http://www.cnc-ebusiness.com/ebusiness/tracking",
+      "code": 403
+    },
+    {
+      "u": "https://ebiz.heungaline.com/Tracking",
+      "code": 500
+    },
+    {
+      "u": "https://www.stinnes-linien.de/TOOLS/Tracking-And-Tracing",
+      "code": 404
+    },
+    {
+      "u": "https://portal.carucontainers.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://newseaweb.seacoglobal.com/sap/bc/ui5_ui5/sap/zseaco_ue15/index.html",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.ueshk.com/inquiries.aspx?classid=3&aid=5&leftid=18",
+      "code": 403
+    },
+    {
+      "u": "https://www.messinaline.it/wps/wcm/connect/internet/messina_en/operativo/cntr_tracking/#tf-cntr_tracking",
+      "code": 404
+    },
+    {
+      "u": "http://www.hdasco.com/default-52.aspx",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.fesco.ru/en/clients/tracking/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.macandrews.com/opdr-tracking/opdr-container-tracking/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.niledutch.com/en/schedules-tracking/track-your-container/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.macship.com/E-BUSINESS/TrackingAndTracing.aspx",
+      "code": 404
+    },
+    {
+      "u": "http://www.royalarcticline.com/",
+      "code": 403
+    },
+    {
+      "u": "http://www.cma-cgm.com/ebusiness/tracking",
+      "code": 403
+    },
+    {
+      "u": "http://container.panocean.com/HP2401/hp2401.stx",
+      "code": 404
+    },
+    {
+      "u": "http://www.pdl123.co.nz/track-and-trace/",
+      "code": 404
+    },
+    {
+      "u": "http://esvc.kambara-kisen.co.jp/clt/CUP_HOM_3301.do?sessLocale=en",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.tropical.com/track-shipments",
+      "code": 404
+    },
+    {
+      "u": "https://www.rifline.it/en/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.samskip.com/en/track-and-trace/",
+      "code": 404
+    },
+    {
+      "u": "https://www.mellship.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://portal.totemaritime.com/Account/Login?ReturnUrl=%2f",
+      "code": 400
+    },
+    {
+      "u": "http://www.tarros.it/traccia-container-en/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.shreyasshipping.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.transworldfeeders.com.sg/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.aclship.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.panasiashipping.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.pacificashipping.co.nz/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.nor-lines.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.coheung.net/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.posta.ba/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.portusline.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.cosconsea.com.sg/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.westwoodshipping.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.ptt.gov.tr/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.postnord.se/en",
+      "code": 403
+    },
+    {
+      "u": "https://www.omniva.ee/",
+      "code": 403
+    },
+    {
+      "u": "https://www.apc-pli.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.maltapost.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.cacesapostal.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.elta.gr/en/",
+      "code": 403
+    },
+    {
+      "u": "https://www.post.lt/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.postdanmark.dk/",
+      "code": 403
+    },
+    {
+      "u": "https://www.jerseypost.com/track/",
+      "code": 404
+    },
+    {
+      "u": "https://chronopost.pt/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.posta.mk/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.posten.ax/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://inpost.pl/",
+      "code": 403
+    },
+    {
+      "u": "https://www.correos.ad/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://pochta.ru/",
+      "code": 417
+    },
+    {
+      "u": "https://www.guernseypost.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.poste.sm/on-line/home.html",
+      "code": 403
+    },
+    {
+      "u": "https://www.cypruspost.post/",
+      "code": 513
+    },
+    {
+      "u": "http://www.azems.az/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.poste.dz/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://bdpost.gov.bd/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.botspost.co.bw/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.ems.com.cn/qps/yjcx/",
+      "code": 412
+    },
+    {
+      "u": "https://www.11183.com.cn/",
+      "code": 412
+    },
+    {
+      "u": "http://www.bps.gov.bb/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.post.gov.bn/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.bpost2.be/bpostinternational/track_trace/find.php",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.post.ba/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.correos.go.cr/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.postnord.dk/",
+      "code": 403
+    },
+    {
+      "u": "http://www.correosdelecuador.gob.ec/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://emiratespost.ae/",
+      "code": 403
+    },
+    {
+      "u": "http://www.ethiopostal.com/",
+      "code": 404
+    },
+    {
+      "u": "http://www.egyptpost.org/",
+      "code": 403
+    },
+    {
+      "u": "https://www.canadapost.ca/",
+      "code": 500
+    },
+    {
+      "u": "http://www.postfiji.com.fj/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://correosytelegrafos.civ.gob.gt/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://guypost.gy/",
+      "code": 403
+    },
+    {
+      "u": "https://post.iq/en/",
+      "code": 403
+    },
+    {
+      "u": "http://www.jordanpost.com.jo/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.israelpost.co.il/",
+      "code": 403
+    },
+    {
+      "u": "https://app.indiapost.gov.in/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://post.ir/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://kiribatipost.net.ki/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.epost.go.kr/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://service.epost.go.kr/iservice/usr/trace/usrtrc001k01.jsp",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://kyrgyzpost.kg/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://moc.gov.kw/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://lesothopost.org.ls/",
+      "code": 403
+    },
+    {
+      "u": "http://www.stluciapostal.com/",
+      "code": 404
+    },
+    {
+      "u": "https://www.maldivespost.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.correosdemexico.gob.mx/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.correios.co.mz/",
+      "code": 403
+    },
+    {
+      "u": "https://www.myanmarpost.com.mm/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.post-plus.net/",
+      "code": 500
+    },
+    {
+      "u": "http://www.poste.ma/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.correos.gob.ni/",
+      "code": 403
+    },
+    {
+      "u": "https://www.phlpost.gov.ph/",
+      "code": 404
+    },
+    {
+      "u": "http://www.nzpost.co.nz/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.svgpost.gov.vc/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.correoparaguayo.gov.py/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.postpng.com.pg/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://qatarpost.qa/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.i-posita.rw/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.pakpost.gov.pk/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://omanpost.om/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.gpo.gov.np/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.palpost.ps/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.nipost.gov.ng/",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://splonline.com.sa/ar/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.thailandpost.co.th/",
+      "code": 403
+    },
+    {
+      "u": "http://www.seychelles-post.com/",
+      "code": 401
+    },
+    {
+      "u": "http://www.directlink.com/",
+      "code": 403
+    },
+    {
+      "u": "http://www.laposte.tg/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.slpost.gov.lk/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.laposte.sn/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.postoffice.co.za/",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "http://www.tuvalupost.tv/",
+      "code": 503
+    },
+    {
+      "u": "http://www.aps.ai/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.correo.com.uy/",
+      "code": 404
+    },
+    {
+      "u": "https://www.bermudapost.bm/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.post.ye/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.poste.tn/",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "http://www.i-parcel.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.royalgibraltar.post/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://telepost.gl/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.opt.nc/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.cdek.ru/",
+      "code": 418
+    },
+    {
+      "u": "https://www.correosexpress.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.fastway.ie/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.jet.co.id/",
+      "code": 500
+    },
+    {
+      "u": "https://hermesborderguru.io/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.nexive.it/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.gdexpress.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.sendle.com/",
+      "code": 530
+    },
+    {
+      "u": "https://dpd.pt/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://activetracing.dhl.com/",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://th.kerryexpress.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.jet-logistics.com/?from=17track",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.mondialrelay.fr/",
+      "code": 403
+    },
+    {
+      "u": "https://hk.kerryexpress.com/home",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.jtexpress.ph/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.gls-info.nl/",
+      "code": 404
+    },
+    {
+      "u": "https://inpost.it/",
+      "code": 403
+    },
+    {
+      "u": "https://www.cjlogistics.com/en/network/en-sg",
+      "code": 403
+    },
+    {
+      "u": "https://www.inpost.es/",
+      "code": 403
+    },
+    {
+      "u": "https://www.ninjavan.co/en-sg/tracking",
+      "code": 404
+    },
+    {
+      "u": "https://www.upsmailinnovations.com/",
+      "code": 503
+    },
+    {
+      "u": "https://www.envialia.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.flashexpress.my/",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://www.skynet.co.za/",
+      "code": 403
+    },
+    {
+      "u": "https://estafetausa.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.kintetsu-ls.co.jp/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.kerrytj.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.gls-pakete.de/",
+      "code": 403
+    },
+    {
+      "u": "https://www.dpd.uz/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.wing.ae/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.packeta.com/",
+      "code": 404
+    },
+    {
+      "u": "https://www.cargus.ro/",
+      "code": 403
+    },
+    {
+      "u": "https://www.thecourierguy.co.za/",
+      "code": 403
+    },
+    {
+      "u": "https://www.canpar.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.jdlexpress.co.id/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.tcsexpress.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.loomisexpress.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.oca.com.ar/",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://sameday.ro/",
+      "code": 403
+    },
+    {
+      "u": "https://www.dachser.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://leopardscourier.com/pk/",
+      "code": 404
+    },
+    {
+      "u": "http://supplychain.2go.com.ph/",
+      "code": 521
+    },
+    {
+      "u": "https://www.tpcglobe.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://chilexpress.cl/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.speedex.gr/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://dayross.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.zasilkovna.cz/",
+      "code": 404
+    },
+    {
+      "u": "https://tracking.99minutos.com/",
+      "code": 429
+    },
+    {
+      "u": "https://my.dxdelivery.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.coordinadora.com/",
+      "code": 404
+    },
+    {
+      "u": "https://www.nacex.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.interrapidisimo.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.hellmann.com/en/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.sicepat.com/",
+      "code": 403
+    },
+    {
+      "u": "https://corp.fukutsu.co.jp/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.odfl.com/",
+      "code": 403
+    },
+    {
+      "u": "https://ccfs.com/",
+      "code": 403
+    },
+    {
+      "u": "https://yrc.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "http://www.amtrucking.com/",
+      "err": "fetch failed"
+    },
+    {
+      "u": "https://www.sefl.com/",
+      "err": "This operation was aborted"
+    },
+    {
+      "u": "https://www.us-cargo.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.herculesfreight.com/",
+      "code": 403
+    },
+    {
+      "u": "https://www.plus-cs.co.jp/",
+      "code": 403
+    }
+  ]
+}
