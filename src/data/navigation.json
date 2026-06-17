@@ -2705,9 +2705,9 @@
     },
     {
       "id": 2749,
-      "title": "Payment Country Selection",
-      "url": "https://ebilling.dhl.com/gpp/lookup/country_selection/?error=unsupported_country",
-      "description": "DHL Payment Country Selection",
+      "title": "DHL 美国支付税金",
+      "url": "https://ebilling.dhl.com/gpp/lookup/item_input/us/",
+      "description": "DHL US Pay Duty",
       "category": "国际快递",
       "order": 1992.93999,
       "thumbnail": ""
