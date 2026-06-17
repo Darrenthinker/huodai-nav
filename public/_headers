@@ -8,7 +8,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
 
 /logos/*
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: public, max-age=300, must-revalidate
 
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
