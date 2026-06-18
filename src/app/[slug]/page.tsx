@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CategoryPageView } from "@/components/category-page-view";
+import { HomeView } from "@/components/home-view";
 import {
   CATEGORY_PAGES,
   categoryNameBySlug,
@@ -50,5 +50,5 @@ export default async function CategorySlugPage({
   const name = categoryNameBySlug(slug);
   const meta = name ? CATEGORY_PAGES[name] : undefined;
   if (!name || !meta) notFound();
-  return <CategoryPageView categoryName={name} />;
+  return <HomeView initialCategory={name} />;
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { getIcon } from "@/lib/icons";
 import { categoryHref } from "@/lib/category-pages";
 import type { Category } from "@/lib/types";
@@ -11,6 +10,7 @@ interface SidebarProps {
   activeCategory: string | null;
   isOpen: boolean;
   onClose: () => void;
+  onCategoryClick: (name: string) => void;
   collapsed: boolean;
   onToggleCollapse: () => void;
   onSubmitClick: () => void;
@@ -18,7 +18,7 @@ interface SidebarProps {
 }
 
 export function Sidebar({
-  categories, activeCategory, isOpen, onClose,
+  categories, activeCategory, isOpen, onClose, onCategoryClick,
   collapsed, onToggleCollapse, onSubmitClick, showPromoEntry = false,
 }: SidebarProps) {
   const w = collapsed ? "w-[56px]" : "w-[168px]";
@@ -91,12 +91,20 @@ export function Sidebar({
             const Icon = getIcon(cat.icon);
             const isActive = activeCategory === cat.name;
 
+            const handleClick = (e: React.MouseEvent) => {
+              // 普通左键：站内滚动 + 改地址栏（不刷新）；中键/Ctrl 等保持默认（新标签打开 /slug）
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+              e.preventDefault();
+              onCategoryClick(cat.name);
+              onClose();
+            };
+
             if (collapsed) {
               return (
-                <Link
+                <a
                   key={cat.id}
                   href={categoryHref(cat.name)}
-                  onClick={onClose}
+                  onClick={handleClick}
                   className={`
                     group/tip w-full flex flex-col items-center py-[6px] px-0.5 rounded-lg mb-0.5 transition-all duration-200
                     ${isActive
@@ -109,15 +117,15 @@ export function Sidebar({
                   <span className={`text-[9px] leading-none mt-1 font-medium truncate max-w-full transition-opacity duration-200 ${isActive ? "opacity-100" : "opacity-0 group-hover/tip:opacity-100"}`}>
                     {cat.name}
                   </span>
-                </Link>
+                </a>
               );
             }
 
             return (
-              <Link
+              <a
                 key={cat.id}
                 href={categoryHref(cat.name)}
-                onClick={onClose}
+                onClick={handleClick}
                 className={`
                   w-full flex items-center gap-3 px-3 py-[9px] rounded-lg mb-0.5
                   text-[13px] tracking-[0.01em] transition-all duration-200
@@ -129,7 +137,7 @@ export function Sidebar({
               >
                 <Icon size={16} strokeWidth={isActive ? 2 : 1.5} className="flex-shrink-0" />
                 <span className="truncate">{cat.name}</span>
-              </Link>
+              </a>
             );
           })}
         </nav>
