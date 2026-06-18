@@ -3217,6 +3217,258 @@
       "thumbnail": ""
     },
     {
+      "id": 3588,
+      "title": "韩国海关",
+      "url": "https://www.customs.go.kr/english/main.do",
+      "description": "韩国海关 Korea Customs",
+      "category": "海关常用",
+      "order": 1989.99979,
+      "thumbnail": ""
+    },
+    {
+      "id": 3589,
+      "title": "台湾海关",
+      "url": "https://web.customs.gov.tw/en/",
+      "description": "台湾关务署 MOF",
+      "category": "海关常用",
+      "order": 1989.99978,
+      "thumbnail": ""
+    },
+    {
+      "id": 3590,
+      "title": "新加坡海关",
+      "url": "https://www.customs.gov.sg/",
+      "description": "新加坡海关 Singapore Customs",
+      "category": "海关常用",
+      "order": 1989.99977,
+      "thumbnail": ""
+    },
+    {
+      "id": 3591,
+      "title": "马来西亚海关",
+      "url": "https://www.customs.gov.my/en/",
+      "description": "马来西亚海关 JKDM",
+      "category": "海关常用",
+      "order": 1989.99976,
+      "thumbnail": ""
+    },
+    {
+      "id": 3592,
+      "title": "印尼海关",
+      "url": "https://www.beacukai.go.id/?lang=en",
+      "description": "印度尼西亚海关 Bea Cukai",
+      "category": "海关常用",
+      "order": 1989.99975,
+      "thumbnail": ""
+    },
+    {
+      "id": 3593,
+      "title": "菲律宾海关",
+      "url": "https://customs.gov.ph/",
+      "description": "菲律宾海关 BOC",
+      "category": "海关常用",
+      "order": 1989.99974,
+      "thumbnail": ""
+    },
+    {
+      "id": 3594,
+      "title": "德国海关",
+      "url": "https://www.zoll.de/EN/Home/home_node.html",
+      "description": "德国海关 Zoll",
+      "category": "海关常用",
+      "order": 1989.99973,
+      "thumbnail": ""
+    },
+    {
+      "id": 3595,
+      "title": "法国海关",
+      "url": "https://www.douane.gouv.fr/",
+      "description": "法国海关 Douane",
+      "category": "海关常用",
+      "order": 1989.99972,
+      "thumbnail": ""
+    },
+    {
+      "id": 3596,
+      "title": "荷兰海关",
+      "url": "https://www.douane.nl/en/",
+      "description": "荷兰海关 Douane",
+      "category": "海关常用",
+      "order": 1989.99971,
+      "thumbnail": ""
+    },
+    {
+      "id": 3597,
+      "title": "意大利海关",
+      "url": "https://www.adm.gov.it/portale/en/web/guest/home-english",
+      "description": "意大利海关 ADM",
+      "category": "海关常用",
+      "order": 1989.9997,
+      "thumbnail": ""
+    },
+    {
+      "id": 3598,
+      "title": "西班牙海关",
+      "url": "https://sede.agenciatributaria.gob.es/Sede/en_gb/aduanas_.html",
+      "description": "西班牙海关 AEAT",
+      "category": "海关常用",
+      "order": 1989.99969,
+      "thumbnail": ""
+    },
+    {
+      "id": 3599,
+      "title": "波兰海关",
+      "url": "https://www.gov.pl/web/national-revenue-administration",
+      "description": "波兰海关 KAS",
+      "category": "海关常用",
+      "order": 1989.99968,
+      "thumbnail": ""
+    },
+    {
+      "id": 3600,
+      "title": "瑞士海关",
+      "url": "https://www.bazg.admin.ch/en",
+      "description": "瑞士海关 BAZG",
+      "category": "海关常用",
+      "order": 1989.99967,
+      "thumbnail": ""
+    },
+    {
+      "id": 3601,
+      "title": "土耳其海关",
+      "url": "https://trade.gov.tr/",
+      "description": "土耳其海关 贸易部",
+      "category": "海关常用",
+      "order": 1989.99966,
+      "thumbnail": ""
+    },
+    {
+      "id": 3602,
+      "title": "埃及海关",
+      "url": "https://customs.gov.eg/",
+      "description": "埃及海关 Egyptian Customs",
+      "category": "海关常用",
+      "order": 1989.99965,
+      "thumbnail": ""
+    },
+    {
+      "id": 3603,
+      "title": "南非海关",
+      "url": "https://www.sars.gov.za/customs-and-excise/",
+      "description": "南非海关 SARS",
+      "category": "海关常用",
+      "order": 1989.99964,
+      "thumbnail": ""
+    },
+    {
+      "id": 3604,
+      "title": "尼日利亚海关",
+      "url": "https://customs.gov.ng/",
+      "description": "尼日利亚海关 NCS",
+      "category": "海关常用",
+      "order": 1989.99963,
+      "thumbnail": ""
+    },
+    {
+      "id": 3605,
+      "title": "肯尼亚海关",
+      "url": "https://www.kra.go.ke/",
+      "description": "肯尼亚海关 KRA",
+      "category": "海关常用",
+      "order": 1989.99962,
+      "thumbnail": ""
+    },
+    {
+      "id": 3606,
+      "title": "摩洛哥海关",
+      "url": "https://www.douane.gov.ma/web/guest",
+      "description": "摩洛哥海关 ADII",
+      "category": "海关常用",
+      "order": 1989.99961,
+      "thumbnail": ""
+    },
+    {
+      "id": 3607,
+      "title": "以色列海关",
+      "url": "https://www.gov.il/en/departments/topics/customs_israel_tax_authority",
+      "description": "以色列海关 ITA",
+      "category": "海关常用",
+      "order": 1989.9996,
+      "thumbnail": ""
+    },
+    {
+      "id": 3608,
+      "title": "墨西哥海关",
+      "url": "https://www.anam.gob.mx/",
+      "description": "墨西哥海关 ANAM",
+      "category": "海关常用",
+      "order": 1989.99959,
+      "thumbnail": ""
+    },
+    {
+      "id": 3609,
+      "title": "阿根廷海关",
+      "url": "https://www.argentina.gob.ar/arca/aduana",
+      "description": "阿根廷海关 ARCA",
+      "category": "海关常用",
+      "order": 1989.99958,
+      "thumbnail": ""
+    },
+    {
+      "id": 3610,
+      "title": "智利海关",
+      "url": "https://www.aduana.cl/",
+      "description": "智利海关 Aduana",
+      "category": "海关常用",
+      "order": 1989.99957,
+      "thumbnail": ""
+    },
+    {
+      "id": 3611,
+      "title": "哥伦比亚海关",
+      "url": "https://www.dian.gov.co/",
+      "description": "哥伦比亚海关 DIAN",
+      "category": "海关常用",
+      "order": 1989.99956,
+      "thumbnail": ""
+    },
+    {
+      "id": 3612,
+      "title": "秘鲁海关",
+      "url": "https://www.sunat.gob.pe/aduanas.html",
+      "description": "秘鲁海关 SUNAT",
+      "category": "海关常用",
+      "order": 1989.99955,
+      "thumbnail": ""
+    },
+    {
+      "id": 3613,
+      "title": "巴基斯坦海关",
+      "url": "https://www.fbr.gov.pk/customs/131167/131271",
+      "description": "巴基斯坦海关 FBR",
+      "category": "海关常用",
+      "order": 1989.99954,
+      "thumbnail": ""
+    },
+    {
+      "id": 3614,
+      "title": "孟加拉海关",
+      "url": "https://bangladeshcustoms.gov.bd/",
+      "description": "孟加拉国海关 NBR",
+      "category": "海关常用",
+      "order": 1989.99953,
+      "thumbnail": ""
+    },
+    {
+      "id": 3615,
+      "title": "新西兰海关",
+      "url": "https://www.customs.govt.nz/",
+      "description": "新西兰海关 NZ Customs",
+      "category": "海关常用",
+      "order": 1989.99952,
+      "thumbnail": ""
+    },
+    {
       "id": 2303,
       "title": "谷歌地球",
       "url": "https://www.google.com/maps/d/",
