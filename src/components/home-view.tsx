@@ -45,17 +45,26 @@ export function HomeView({ initialCategory }: { initialCategory?: string }) {
 
   const scrollLockRef = useRef(false);
 
-  // 直接进入 /slug 时，定位到对应分类
+  // 直接进入 /slug 时，定位到对应分类（多次重试，覆盖水合/排版完成前的高度变化）
   useEffect(() => {
     if (!initialCategory) return;
     const cat = categories.find((c) => c.name === initialCategory);
     if (!cat) return;
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    let cancelled = false;
     scrollLockRef.current = true;
-    const t = setTimeout(() => {
+    const jump = () => {
+      if (cancelled) return;
       document.getElementById(`cat-${cat.id}`)?.scrollIntoView({ behavior: "auto", block: "start" });
-      scrollLockRef.current = false;
-    }, 60);
-    return () => clearTimeout(t);
+    };
+    jump();
+    const timers = [50, 200, 450, 800, 1300].map((ms) => setTimeout(jump, ms));
+    const release = setTimeout(() => { scrollLockRef.current = false; }, 1400);
+    return () => {
+      cancelled = true;
+      timers.forEach(clearTimeout);
+      clearTimeout(release);
+    };
   }, [initialCategory]);
 
   const filteredSites = useMemo(() => {
