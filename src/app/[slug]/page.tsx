@@ -50,11 +50,5 @@ export default async function CategorySlugPage({
   const name = categoryNameBySlug(slug);
   const meta = name ? CATEGORY_PAGES[name] : undefined;
   if (!name || !meta) notFound();
-  return (
-    <CategoryPageView
-      categoryName={name}
-      heading={meta.heading}
-      intro={meta.intro}
-    />
-  );
+  return <CategoryPageView categoryName={name} />;
 }
