@@ -12,6 +12,7 @@ const TODAY = new Date().toISOString().slice(0, 10);
 // 如果未来拆分成 /category/<slug> 等独立路由，再恢复批量生成。
 const urls = [
   { loc: `${SITE_URL}/`, changefreq: "daily", priority: "1.0" },
+  { loc: `${SITE_URL}/haiguan`, changefreq: "weekly", priority: "0.8" },
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
