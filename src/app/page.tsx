@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { getCategories, getSites } from "@/lib/data";
 import type { Site } from "@/lib/types";
 import { Sidebar } from "@/components/sidebar";
@@ -55,18 +55,6 @@ export default function Home() {
 
   const scrollLockRef = useRef(false);
 
-  const scrollTo = useCallback((name: string) => {
-    const cat = categories.find((c) => c.name === name);
-    if (!cat) return;
-    const el = document.getElementById(`cat-${cat.id}`);
-    if (el) {
-      scrollLockRef.current = true;
-      setActiveCategory(name);
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setTimeout(() => { scrollLockRef.current = false; }, 800);
-    }
-  }, []);
-
   useEffect(() => {
     const ids = categories.map((c) => ({ name: c.name, el: document.getElementById(`cat-${c.id}`) }));
     const onScroll = () => {
@@ -95,7 +83,6 @@ export default function Home() {
         activeCategory={activeCategory}
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
-        onCategoryClick={scrollTo}
         collapsed={collapsed}
         onToggleCollapse={() => setCollapsed((v) => !v)}
         onSubmitClick={() => setSubmitOpen(true)}

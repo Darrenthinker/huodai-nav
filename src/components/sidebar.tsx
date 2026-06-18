@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { getIcon } from "@/lib/icons";
+import { categoryHref } from "@/lib/category-pages";
 import type { Category } from "@/lib/types";
 import { X, Plus, ChevronsLeft, ChevronsRight, BookOpen } from "lucide-react";
 
@@ -9,7 +11,6 @@ interface SidebarProps {
   activeCategory: string | null;
   isOpen: boolean;
   onClose: () => void;
-  onCategoryClick: (name: string) => void;
   collapsed: boolean;
   onToggleCollapse: () => void;
   onSubmitClick: () => void;
@@ -17,7 +18,7 @@ interface SidebarProps {
 }
 
 export function Sidebar({
-  categories, activeCategory, isOpen, onClose, onCategoryClick,
+  categories, activeCategory, isOpen, onClose,
   collapsed, onToggleCollapse, onSubmitClick, showPromoEntry = false,
 }: SidebarProps) {
   const w = collapsed ? "w-[56px]" : "w-[168px]";
@@ -92,9 +93,10 @@ export function Sidebar({
 
             if (collapsed) {
               return (
-                <button
+                <Link
                   key={cat.id}
-                  onClick={() => { onCategoryClick(cat.name); onClose(); }}
+                  href={categoryHref(cat.name)}
+                  onClick={onClose}
                   className={`
                     group/tip w-full flex flex-col items-center py-[6px] px-0.5 rounded-lg mb-0.5 transition-all duration-200
                     ${isActive
@@ -107,14 +109,15 @@ export function Sidebar({
                   <span className={`text-[9px] leading-none mt-1 font-medium truncate max-w-full transition-opacity duration-200 ${isActive ? "opacity-100" : "opacity-0 group-hover/tip:opacity-100"}`}>
                     {cat.name}
                   </span>
-                </button>
+                </Link>
               );
             }
 
             return (
-              <button
+              <Link
                 key={cat.id}
-                onClick={() => { onCategoryClick(cat.name); onClose(); }}
+                href={categoryHref(cat.name)}
+                onClick={onClose}
                 className={`
                   w-full flex items-center gap-3 px-3 py-[9px] rounded-lg mb-0.5
                   text-[13px] tracking-[0.01em] transition-all duration-200
@@ -126,7 +129,7 @@ export function Sidebar({
               >
                 <Icon size={16} strokeWidth={isActive ? 2 : 1.5} className="flex-shrink-0" />
                 <span className="truncate">{cat.name}</span>
-              </button>
+              </Link>
             );
           })}
         </nav>

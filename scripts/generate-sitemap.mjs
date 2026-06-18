@@ -10,9 +10,19 @@ const TODAY = new Date().toISOString().slice(0, 10);
 // 因此 sitemap 只声明真实可索引的页面，避免 Search Console 把 13 个锚点
 // 误报为"已发现页面"造成数据失真。
 // 如果未来拆分成 /category/<slug> 等独立路由，再恢复批量生成。
+// 首页 + 13 个分类落地页（与 src/lib/category-pages.ts 的 slug 保持一致）
+const CATEGORY_SLUGS = [
+  "tools", "air", "express", "ocean", "fba", "line", "parcel",
+  "haiguan", "efficiency", "trade", "credit", "news", "recommend",
+];
+
 const urls = [
   { loc: `${SITE_URL}/`, changefreq: "daily", priority: "1.0" },
-  { loc: `${SITE_URL}/haiguan`, changefreq: "weekly", priority: "0.8" },
+  ...CATEGORY_SLUGS.map((slug) => ({
+    loc: `${SITE_URL}/${slug}`,
+    changefreq: "weekly",
+    priority: "0.8",
+  })),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>

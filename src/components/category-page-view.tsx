@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo } from "react";
 import { getCategories, getSites } from "@/lib/data";
 import { Sidebar } from "@/components/sidebar";
 import { SearchHeader } from "@/components/search-header";
@@ -50,12 +50,6 @@ export function CategoryPageView({ categoryName, heading, intro }: Props) {
     });
   }, [categoryName, query]);
 
-  // 点击侧栏分类 → 回到首页对应分类锚点
-  const goCategory = useCallback((name: string) => {
-    const cat = categories.find((c) => c.name === name);
-    window.location.href = cat ? `/#cat-${cat.id}` : "/";
-  }, []);
-
   const mainMl = collapsed ? "lg:ml-[56px]" : "lg:ml-[156px]";
 
   return (
@@ -65,7 +59,6 @@ export function CategoryPageView({ categoryName, heading, intro }: Props) {
         activeCategory={categoryName}
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
-        onCategoryClick={goCategory}
         collapsed={collapsed}
         onToggleCollapse={() => setCollapsed((v) => !v)}
         onSubmitClick={() => setSubmitOpen(true)}
