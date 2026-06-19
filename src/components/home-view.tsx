@@ -184,6 +184,26 @@ export function HomeView({ initialCategory }: { initialCategory?: string }) {
               粤ICP备2023049349号-2
             </a>
           </p>
+          <p className="text-[11px] text-[#a1a1a6] mt-1 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+            {[
+              { name: "货代导航网", href: "https://huodaiagent.com/" },
+              { name: "货代服务商", href: "https://www.forwarderspn.com/" },
+              { name: "货代地图", href: "https://map.huodaiagent.com/" },
+              { name: "货代知识库", href: "https://get.huodaiagent.com/" },
+              { name: "56calls", href: "https://www.56calls.com/" },
+              { name: "税金代付", href: "https://payduty.huodaiagent.com/" },
+              { name: "货代群", href: "https://forwarder-group.huodaiagent.com/" },
+              { name: "货币兑换", href: "https://currency-exchange.huodaiagent.com/" },
+              { name: "MID生成器", href: "https://mid.huodaiagent.com/" },
+            ].map((link, i, arr) => (
+              <span key={link.href} className="inline-flex items-center gap-x-2">
+                <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-[#a1a1a6] hover:text-[#0A84FF] transition-colors">
+                  {link.name}
+                </a>
+                {i < arr.length - 1 && <span className="text-[#a1a1a6]/40">|</span>}
+              </span>
+            ))}
+          </p>
         </footer>
       </main>
 
