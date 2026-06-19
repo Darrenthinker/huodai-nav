@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { Analytics } from "@/components/analytics";
 
 const SITE_URL = "https://www.huodaiagent.com";
 const SITE_TITLE = "货代导航网 | 导航 资源 社群 | 货代agent";
@@ -147,6 +148,7 @@ export default function RootLayout({
           />
         ))}
         {children}
+        <Analytics />
       </body>
     </html>
   );
