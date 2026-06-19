@@ -184,7 +184,7 @@ export function HomeView({ initialCategory }: { initialCategory?: string }) {
               粤ICP备2023049349号-2
             </a>
           </p>
-          <p className="text-[11px] text-[#a1a1a6] mt-1 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+          <p className="text-[11px] text-[#a1a1a6] mt-1 flex flex-nowrap items-center justify-center gap-x-2 overflow-x-auto whitespace-nowrap">
             {[
               { name: "货代导航网", href: "https://huodaiagent.com/" },
               { name: "货代服务商", href: "https://www.forwarderspn.com/" },
