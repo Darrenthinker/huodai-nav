@@ -1,7 +1,7 @@
 // 网站分析 ID 配置（拿到新 ID 直接填这里即可全站生效）
 const CLARITY_ID = "x97nt8cgj9"; // Microsoft Clarity 项目ID（热图/录屏/行为）
 const BAIDU_ID = "5ed66e6ddeb75ba92fcf1f2672de52bc"; // 百度统计：hm.js? 后面那串
-const GA4_ID = ""; // Google Analytics 4：G- 开头的测量ID
+const GA4_ID = "G-FJKZVFW6XF"; // Google Analytics 4：货代导航网主站数据流
 
 /**
  * 全站网站分析。直接渲染为静态 HTML 内的内联脚本（服务端导出即在页面中），
