@@ -78,3 +78,16 @@ WordPress 后台导出 XML
 1. `iconMap` 中的 FA class → Lucide 图标映射
 2. `gradients` 中的分类名 → Tailwind 渐变色
 3. `badges` 中的分类名 → badge 背景/文字色
+
+### 新增站点固定流程
+
+每次在 `navigation.json` 中新增一个站点，按以下步骤执行，不要跳步：
+
+1. **确定 id**：取当前文件中最大 id + 1（`grep -o '"id": [0-9]*' src/data/navigation.json | sort -n | tail -1`），确保唯一。
+2. **确定 order**：找到目标分类下希望排在其前面的那条记录的 `order` 值，取一个比它略小、比下一条略大的数（如 `1998.03` 和 `1998.0299` 之间插入 `1998.02995`），越靠前 `order` 越大。
+3. **写入条目**：`id`、`title`、`url`、`description`、`category`、`order`、`thumbnail`（留空字符串）。标题优先使用目标站点官网上的自称名称，不要臆造。
+4. **抓取 logo**：`node scripts/fetch-all-logos.mjs --id <新id>`，只处理这一个站点，避免误触发全量抓取。
+5. **人工核验 logo**：用 Read 工具打开生成的 `public/logos/<id>.png` 实际看一眼。脚本会抓取页面里第一个匹配到的 favicon/`og:image`/含 "logo" 关键字的图片，容易误抓到与站点身份无关的图（例如"诚信网站"认证徽章、空白 data URI、聚合站默认图标）。
+   - 如果不对：手动 `curl` 目标站的 `<link rel="icon">`/`shortcut icon` 地址或官网 header 区域的真实 logo 图，人工确认后用 Write/Bash 覆盖到 `public/logos/<id>.png`。
+6. **提交**：`git add src/data/navigation.json public/logos/<id>.png` 后单独 commit，commit message 说明新增的站点名。不要顺带把无关的未提交改动（其他 logo、sitemap、脚本产物等）一起 `git add`。
+7. **推送前检查残留锁**：本仓库偶发 `.git/index.lock`、`.git/HEAD.lock`、`.git/refs/remotes/origin/*.lock*` 残留（历史上某次 git 进程异常退出所致）。若 push/commit 报 "Unable to create ... lock file" 且 `ps aux | grep git` 确认无 git 进程在跑，可直接删除该 lock 文件后重试；如与远端有分叉，用 `git fetch` + `git rebase origin/master`（若有无关改动先 `git stash push -u`）。
