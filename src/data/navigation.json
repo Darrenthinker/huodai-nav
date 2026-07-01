@@ -1022,9 +1022,9 @@
     },
     {
       "id": 3618,
-      "title": "海关综合查询",
+      "title": "通关网",
       "url": "https://www.hscode.net/IntegrateQueries/QueryYS",
-      "description": "海关综合查询",
+      "description": "通关网",
       "category": "海关常用",
       "order": 1998.02995,
       "thumbnail": ""
